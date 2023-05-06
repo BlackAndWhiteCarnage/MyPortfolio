@@ -1,0 +1,10 @@
+@function remove-hash-prefix($color) {
+  @return str-slice($color, 2);
+}
+
+@mixin background($primary-color, $secondary-color) {
+  $secondary-color-without-prefix: remove-hash-prefix('#{$secondary-color}');
+
+  background: $primary-color;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23#{$secondary-color-without-prefix}' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}

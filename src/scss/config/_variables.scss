@@ -14,6 +14,7 @@ $fonts: (
 
 $colors: (
   beige: #e0d5c7,
+  beige-1: #c8baa9,
   black: #000,
   gray-1: #f0f0f0,
   gray-2: #444,
@@ -25,6 +26,7 @@ $colors: (
   red-2: #df7d7d,
   white: #fff,
   yellow: #fbda00,
+  yellow-1: #f5b601,
 );
 
 $breakpoints: (
@@ -34,6 +36,3 @@ $breakpoints: (
   lg: 1220,
   xl: 1650,
 );
-
-$shadow-right: u.rem-calc(-5) u.rem-calc(5) 0 0 #444444;
-$shadow-left: u.rem-calc(5) u.rem-calc(5) 0 0 #444444;
