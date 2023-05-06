@@ -1,9 +1,12 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/color';
 @use 'scss/mixins/background' as b;
+@use 'scss/placeholders/shadows';
 @use 'scss/unit' as u;
 
 .wrapper {
+  @extend %shadow-right;
+
   @include b.background(color.get(beige), color.get(beige-1));
 
   align-items: center;

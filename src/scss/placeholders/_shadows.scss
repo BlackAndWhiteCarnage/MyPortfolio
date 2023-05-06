@@ -1,0 +1,12 @@
+@use 'scss/color';
+@use 'scss/unit' as u;
+
+%shadow-right {
+  border: u.rem-calc(3) solid color.get(gray-2);
+  box-shadow: u.rem-calc(5) u.rem-calc(5) 0 0 color.get(gray-2);
+}
+
+%shadow-left {
+  border: u.rem-calc(3) solid color.get(gray-2);
+  box-shadow: u.rem-calc(-5) u.rem-calc(5) 0 0 color.get(gray-2);
+}

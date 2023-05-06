@@ -1,8 +1,8 @@
 @use 'scss/color';
-@use 'scss/config/variables' as v;
 @use 'scss/font';
-@use 'scss/unit' as u;
 @use 'scss/mixins/background' as b;
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
 
 .icon {
   transition: 0.25s;
@@ -22,7 +22,6 @@
 
 .button {
   align-items: center;
-  border: u.rem-calc(3) solid color.get(gray-2);
   color: color.get(gray-2);
   cursor: pointer;
   display: flex;
@@ -43,7 +42,7 @@
 }
 
 .left {
-  box-shadow: v.$shadow-left;
+  @extend %shadow-left;
 
   &:hover {
     transform: perspective(u.rem-calc(800)) rotateY(-20deg) scale(1.1)
@@ -52,7 +51,7 @@
 }
 
 .right {
-  box-shadow: v.$shadow-right;
+  @extend %shadow-right;
 
   &:hover {
     transform: perspective(u.rem-calc(800)) rotateY(20deg) scale(1.1)
