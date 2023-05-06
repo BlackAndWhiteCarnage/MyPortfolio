@@ -1,0 +1,40 @@
+@use 'scss/color';
+@use 'scss/mixins/background' as b;
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
+
+.items {
+  @extend %shadow-right;
+
+  @include b.background(color.get(beige), color.get(beige-1));
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+  padding: u.rem-calc(8) 0;
+}
+
+.item {
+  align-items: center;
+  color: color.get(gray-2);
+  display: flex;
+  gap: u.rem-calc(15);
+  justify-content: flex-end;
+  padding: u.rem-calc(6) u.rem-calc(15);
+}
+
+.link {
+  border-bottom: u.rem-calc(3) solid transparent;
+  border-top: u.rem-calc(3) solid transparent;
+  transition: 0.35s;
+
+  &:hover {
+    border-color: color.get(gray-2);
+
+    @include b.background(color.get(green-2), color.get(green-3));
+  }
+}
+
+.icon {
+  width: u.rem-calc(36);
+}
