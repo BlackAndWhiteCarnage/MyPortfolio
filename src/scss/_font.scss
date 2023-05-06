@@ -1,0 +1,36 @@
+/**
+ * Font functions
+ */
+
+@use 'config/variables' as *;
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'unit';
+
+$fonts: () !default;
+
+@function get($font) {
+  @if map.has-key($fonts, $font) {
+    @return map.get($fonts, $font);
+  } @else {
+    @warn "Invalid font: #{$font}.";
+
+    @return null;
+  }
+}
+
+@mixin size($size, $line-height: null) {
+  font-size: unit.rem-calc($size);
+
+  @if (meta.type-of($line-height) == 'number') {
+    $calculated: math.div($line-height, $size);
+    $round: math.div(math.round($calculated * 10000), 10000);
+
+    @if ($calculated != $round) {
+      $calculated: calc(#{$line-height}em / #{$size});
+    }
+
+    line-height: $calculated;
+  }
+}

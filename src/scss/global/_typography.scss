@@ -1,0 +1,27 @@
+/**
+ * Typography styles
+ */
+
+@use 'sass:map';
+@use 'scss/config/typography' as *;
+@use 'scss/props';
+@use 'scss/utils' as *;
+
+@each $tag, $styles in $styles {
+  @if $tag {
+    %is-style-#{ $tag },
+    .is-style-#{ $tag } {
+      @if contains($heading-tags, $tag) {
+        @extend %heading !optional;
+      }
+
+      @include props.from-map($styles, true);
+    }
+
+    @if contains($heading-tags, $tag) {
+      #{ $tag } {
+        @extend %is-style-#{ $tag };
+      }
+    }
+  }
+}

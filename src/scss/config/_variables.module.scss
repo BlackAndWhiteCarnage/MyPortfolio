@@ -1,0 +1,8 @@
+@use 'scss/variables' as *;
+@use 'scss/unit' as *;
+
+@each $bp, $value in $breakpoints {
+  :export {
+    breakpoint#{string.uc-first($bp)}: rem-calc($value);
+  }
+}

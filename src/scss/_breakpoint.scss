@@ -1,0 +1,56 @@
+/**
+ * Breakpoint mixins
+ */
+
+@use 'config/variables' as *;
+@use 'sass:map';
+@use 'unit';
+
+$breakpoints: () !default;
+
+@function get($breakpoint, $useRem: true) {
+  $breakpoint-value: false;
+
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
+  } @else if (type-of($breakpoint) == 'number') {
+    $breakpoint-value: $breakpoint;
+  } @else {
+    @warn "Invalid breakpoint: #{$breakpoint}.";
+  }
+
+  @if (unit.is-unitless($breakpoint-value)) {
+    @if ($useRem == true) {
+      $breakpoint-value: unit.rem-calc($breakpoint-value);
+    } @else {
+      $breakpoint-value: $breakpoint-value * 1px;
+    }
+  }
+
+  @return $breakpoint-value;
+}
+
+@mixin up($breakpoint, $use-rem: true) {
+  $breakpoint-value: get($breakpoint, $use-rem);
+
+  @if ($breakpoint-value) {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+@mixin down($breakpoint, $use-rem: true) {
+  $breakpoint-value: get($breakpoint, $use-rem);
+  $diff: 1;
+
+  @if ($use-rem == true) {
+    $diff: unit.rem-calc($diff);
+  }
+
+  @if ($breakpoint-value) {
+    @media (max-width: ($breakpoint-value - $diff)) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+/**
+ * Props from map mixin
+ */
+@use 'breakpoint' as bp;
+@use 'color';
+@use 'font';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'utils' as *;
+
+@mixin from-map($map, $conditional-color: false) {
+  @each $prop, $value in $map {
+    @if map != meta.type-of($value) {
+      @if font-family == $prop {
+        $value: font.get($value);
+      } @else if color == $prop {
+        $value: color.get($value);
+      } @else if font-size == $prop {
+        @include font.size($value, map.get($map, line-height));
+      }
+
+      @if not contains((font-size, line-height, label), $prop) {
+        @if (color == $prop and true == $conditional-color) {
+          &:not(.has-text-color) {
+            #{ $prop }: $value;
+          }
+        } @else if (background-color == $prop and true == $conditional-color) {
+          &:not(.has-background) {
+            #{ $prop }: $value;
+          }
+        } @else {
+          #{ $prop }: $value;
+        }
+      }
+    } @else {
+      @include bp.down($prop) {
+        @include from-map($value);
+      }
+    }
+  }
+}

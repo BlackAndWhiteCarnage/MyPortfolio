@@ -1,0 +1,8 @@
+@use '../config/variables' as *;
+@use '../unit' as *;
+
+@each $bp, $value in $breakpoints {
+  :export {
+    #{$bp}: rem-calc($value);
+  }
+}

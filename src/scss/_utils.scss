@@ -1,0 +1,9 @@
+/**
+ * Helper functions
+ */
+
+@use 'sass:list';
+
+@function contains($list, $value) {
+  @return null != list.index($list, $value);
+}

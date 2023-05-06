@@ -1,0 +1,31 @@
+/**
+ * Unit functions
+ */
+
+@use 'sass:math';
+@use 'sass:string';
+@use 'sass:list';
+
+$rem-base: 16 !default;
+
+@function is-unitless($value) {
+  @return 0 == string.length(unit($value));
+}
+
+@function rem-calc-list($values) {
+  $result: ();
+
+  @each $value in $values {
+    $result: list.append($result, rem-calc($value));
+  }
+
+  @return $result;
+}
+
+@function rem-calc($size) {
+  @if type-of($size) == 'list' {
+    @return rem-calc-list($size);
+  }
+
+  @return math.div($size, $rem-base) * 1rem;
+}

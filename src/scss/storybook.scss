@@ -1,0 +1,10 @@
+@use 'scss/index.scss';
+
+.sb-show-main {
+  &.sb-main-centered {
+    .container {
+      max-width: none;
+      padding: 0;
+    }
+  }
+}

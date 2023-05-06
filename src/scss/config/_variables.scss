@@ -1,0 +1,26 @@
+/**
+ * Variables
+ */
+@use 'scss/unit' as u;
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+$fonts: (
+  primary: (
+    'Pacifico',
+    cursive,
+  ),
+);
+
+$colors: (
+  white: #fff,
+  black: #000,
+);
+
+$breakpoints: (
+  xs: 480,
+  sm: 768,
+  md: 992,
+  lg: 1220,
+  xl: 1650,
+);
