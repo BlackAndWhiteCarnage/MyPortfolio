@@ -7,6 +7,7 @@ import { StoryObj, Meta } from '@storybook/react';
  * Internal dependencies
  */
 import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
+import { ReactComponent as FacebookIcon } from '@/icons/facebook.svg';
 import { ButtonProps } from './Button';
 import Button from '.';
 
@@ -45,5 +46,13 @@ export const Anchor: StoryObj<typeof Button> = {
 		...DefaultProps,
 		href: 'https://www.google.pl/',
 		target: '_blank',
+	},
+};
+
+export const IconOnly: StoryObj<typeof Button> = {
+	args: {
+		icon: FacebookIcon,
+		position: 'left',
+		iconedButton: true,
 	},
 };

@@ -1,7 +1,12 @@
 /**
  * External dependencies
  */
-import { ButtonHTMLAttributes, AnchorHTMLAttributes, FC } from 'react';
+import {
+	ButtonHTMLAttributes,
+	AnchorHTMLAttributes,
+	FC,
+	ReactNode,
+} from 'react';
 import classnames from 'classnames/bind';
 
 /**
@@ -13,9 +18,19 @@ import { SVGIcon } from '@/types';
 const cx = classnames.bind(classes);
 
 type BaseButtonProps = {
-	icon?: SVGIcon;
 	position: 'left' | 'right';
-};
+} & (
+	| {
+			children?: never;
+			icon: SVGIcon;
+			iconedButton: true;
+	  }
+	| {
+			children: ReactNode;
+			icon?: SVGIcon;
+			iconedButton?: never;
+	  }
+);
 
 type RealButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
@@ -37,6 +52,7 @@ const Button: FC<ButtonProps> = ({
 	children,
 	className,
 	icon: Icon,
+	iconedButton,
 	position,
 	...props
 }) => {
@@ -44,7 +60,10 @@ const Button: FC<ButtonProps> = ({
 		className,
 		'button',
 		'is-style-text-large',
-		position
+		position,
+		{
+			'is-iconed-button': iconedButton,
+		}
 	);
 
 	const buttonIcon = Icon && <Icon className={classes.icon} />;
