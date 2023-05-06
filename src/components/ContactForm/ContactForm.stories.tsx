@@ -11,13 +11,6 @@ import ContactForm from '.';
 export default {
 	title: 'Components/ContactForm',
 	component: ContactForm,
-	argTypes: {
-		links: {
-			table: {
-				disable: true,
-			},
-		},
-	},
 	decorators: [
 		(Story: StoryFn) => (
 			<div
