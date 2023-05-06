@@ -6,11 +6,11 @@ import { StoryObj, Meta } from '@storybook/react';
 /**
  * Internal dependencies
  */
-import OrderedList from '.';
+import List from '.';
 
 export default {
-	title: 'Components/OrderedList',
-	component: OrderedList,
+	title: 'Components/List',
+	component: List,
 	argTypes: {
 		items: {
 			table: {
@@ -18,9 +18,9 @@ export default {
 			},
 		},
 	},
-} satisfies Meta<typeof OrderedList>;
+} satisfies Meta<typeof List>;
 
-export const Primary: StoryObj<typeof OrderedList> = {
+export const Primary: StoryObj<typeof List> = {
 	args: {
 		items: [
 			'Different main color after each refresh',
@@ -32,7 +32,7 @@ export const Primary: StoryObj<typeof OrderedList> = {
 	},
 };
 
-export const Secondary: StoryObj<typeof OrderedList> = {
+export const Secondary: StoryObj<typeof List> = {
 	args: {
 		items: [
 			'react',

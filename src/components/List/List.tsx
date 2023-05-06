@@ -7,16 +7,16 @@ import classnames from 'classnames/bind';
 /**
  * External dependencies
  */
-import classes from './OrderedList.module.scss';
+import classes from './List.module.scss';
 
-type OrderedListProps = {
+type ListProps = {
 	items: Array<string>;
 	variant?: 'primary' | 'secondary';
 };
 
 const cx = classnames.bind(classes);
 
-const OrderedList: FC<OrderedListProps> = ({ items, variant = 'primary' }) => (
+const List: FC<ListProps> = ({ items, variant = 'primary' }) => (
 	<ol className={cx('wrapper', `${variant}-variant`)}>
 		{items.map((value, index) => (
 			<li key={index} className={cx('item', 'is-style-text')}>
@@ -26,4 +26,4 @@ const OrderedList: FC<OrderedListProps> = ({ items, variant = 'primary' }) => (
 	</ol>
 );
 
-export default OrderedList;
+export default List;
