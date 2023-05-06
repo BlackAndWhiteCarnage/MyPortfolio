@@ -11,7 +11,7 @@ import { ReactComponent as ArrowIcon } from '@/icons/arrow-circle.svg';
 import { SVGIcon } from '@/types';
 import classes from './PersonalInfoList.module.scss';
 
-type PersonalInfoListProps = {
+export type PersonalInfoListProps = {
 	items: Array<{
 		href?: string;
 		icon?: SVGIcon;
