@@ -1,0 +1,53 @@
+@use 'scss/color';
+@use 'scss/font';
+@use 'scss/mixins/background' as b;
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: color.get(gray-2);
+  margin-bottom: u.rem-calc(10);
+}
+
+.error {
+  color: color.get(red-3);
+}
+
+.field {
+  @extend %shadow-left;
+
+  @include b.background(color.get(beige), color.get(beige-1));
+  color: color.get(gray-2);
+  font-family: font.get(primary);
+  margin-bottom: u.rem-calc(10);
+
+  outline: none;
+  padding: u.rem-calc(10);
+  transition: 0.25s;
+
+  &:focus {
+    @include b.background(color.get(white), color.get(white-1));
+
+    transform: perspective(u.rem-calc(800)) rotateX(-5deg) rotateY(-10deg)
+      scale(1.1);
+  }
+
+  &.has-error {
+    @include b.background(color.get(red-2), color.get(red-4));
+  }
+}
+
+.textarea {
+  min-height: u.rem-calc(260);
+  resize: none;
+}

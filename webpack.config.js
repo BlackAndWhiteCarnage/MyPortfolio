@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const svgrRule = require('./svgr-rule');
 
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
@@ -32,18 +33,18 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: [
-				  'style-loader',
-				  'css-loader',
-				  {
-					loader: 'sass-loader',
-					options: {
-					  sassOptions: {
-						includePaths: [path.resolve(__dirname, 'src')],
-					  },
+					'style-loader',
+					'css-loader',
+					{
+						loader: 'sass-loader',
+						options: {
+							sassOptions: {
+								includePaths: [path.resolve(__dirname, 'src')],
+							},
+						},
 					},
-				  },
 				],
-			  },
+			},
 		],
 	},
 	resolve: {
@@ -55,5 +56,6 @@ module.exports = {
 			template: 'public/index.html',
 		}),
 		new MiniCssExtractPlugin(),
+		new Dotenv(),
 	],
 };
