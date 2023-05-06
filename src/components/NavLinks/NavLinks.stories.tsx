@@ -6,6 +6,7 @@ import { StoryObj, Meta } from '@storybook/react';
 /**
  * Internal dependencies
  */
+import { navLinks } from '@/config';
 import NavLinks from '.';
 
 export default {
@@ -22,19 +23,6 @@ export default {
 
 export const Default: StoryObj<typeof NavLinks> = {
 	args: {
-		links: [
-			{
-				label: 'About me',
-				href: '#about-me',
-			},
-			{
-				label: 'Projects',
-				href: '#projects',
-			},
-			{
-				label: 'Contact',
-				href: '#contact',
-			},
-		],
+		links: navLinks,
 	},
 };
