@@ -1,16 +1,15 @@
 /**
  * External dependencies
  */
-import { ErrorMessage } from '@hookform/error-message';
 import { FC, useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { FormProvider, useForm, SubmitHandler } from 'react-hook-form';
 import classnames from 'classnames/bind';
 import emailjs from 'emailjs-com';
 
 /**
  * Internal dependencies
  */
-import { Button } from '@/components';
+import { Button, FormField } from '@/components';
 import { ReactComponent as PlaneIcon } from '@/icons/plane.svg';
 import classes from './ContactForm.module.scss';
 
@@ -27,11 +26,7 @@ const ContactForm: FC = () => {
 		message: string;
 	} | null>(null);
 
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<ContactFormFields>();
+	const methods = useForm<ContactFormFields>();
 
 	const onSubmit: SubmitHandler<ContactFormFields> = (data) => {
 		emailjs
@@ -62,77 +57,48 @@ const ContactForm: FC = () => {
 	};
 
 	return (
-		<form className={classes.wrapper} onSubmit={handleSubmit(onSubmit)}>
-			{submitdFeedback && (
-				<div className={cx('submitFeedback', submitdFeedback.type)}>
-					<p className={cx('is-style-h2')}>
-						{submitdFeedback.message}
-					</p>
-				</div>
-			)}
-			<label htmlFor="email" className={cx('label', 'is-style-text')}>
-				Email
-			</label>
-			<div className={classes.formField}>
-				<input
-					id="email"
-					type="text"
-					className={cx('field', 'is-style-text', {
-						'has-error': errors?.email,
-					})}
-					{...register('email', {
+		<FormProvider {...methods}>
+			<form
+				className={classes.wrapper}
+				onSubmit={methods.handleSubmit(onSubmit)}
+			>
+				{submitdFeedback && (
+					<div className={cx('submitFeedback', submitdFeedback.type)}>
+						<p className={cx('is-style-h2')}>
+							{submitdFeedback.message}
+						</p>
+					</div>
+				)}
+				<FormField
+					name="email"
+					type="input"
+					label="Email"
+					validation={{
 						required: 'Email is required.',
 						pattern: {
 							value: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/,
 							message: 'Email is invalid',
 						},
-					})}
+					}}
 				/>
-				<ErrorMessage
-					errors={errors}
-					name="email"
-					render={({ message }) => (
-						<p className={cx('error', 'is-style-text-small')}>
-							{message}
-						</p>
-					)}
-				/>
-			</div>
-			<div className={classes.formField}>
-				<label
-					htmlFor="message"
-					className={cx('label', 'is-style-text')}
-				>
-					Message
-				</label>
-				<textarea
-					id="message"
-					className={cx('field', 'textarea', 'is-style-text', {
-						'has-error': errors?.message,
-					})}
-					{...register('message', {
+				<FormField
+					name="message"
+					type="textarea"
+					label="Message"
+					validation={{
 						required: 'Message is required.',
 						pattern: {
 							value: /^[\s\S]{30,}$/,
 							message:
 								'Message must contain at least 30 characters.',
 						},
-					})}
+					}}
 				/>
-				<ErrorMessage
-					errors={errors}
-					name="message"
-					render={({ message }) => (
-						<p className={cx('error', 'is-style-text-small')}>
-							{message}
-						</p>
-					)}
-				/>
-			</div>
-			<Button position="left" icon={PlaneIcon} type="submit">
-				Send message!
-			</Button>
-		</form>
+				<Button position="left" icon={PlaneIcon} type="submit">
+					Send message!
+				</Button>
+			</form>
+		</FormProvider>
 	);
 };
 

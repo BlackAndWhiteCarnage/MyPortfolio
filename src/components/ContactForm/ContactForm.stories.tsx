@@ -32,6 +32,4 @@ export default {
 	],
 } satisfies Meta<typeof ContactForm>;
 
-export const Default: StoryObj<typeof ContactForm> = {
-	args: {},
-};
+export const Default: StoryObj<typeof ContactForm> = {};
