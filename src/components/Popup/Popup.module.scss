@@ -1,0 +1,135 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/config/variables' as v;
+@use 'scss/mixins/background' as b;
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
+
+.popup {
+  @include b.background(color.get(beige), color.get(beige-1));
+
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  overflow-x: hidden;
+  padding: v.$padding;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: 0.35s 0.35s;
+  width: 100%;
+  z-index: 10000;
+
+  @include bp.down(sm) {
+    padding: v.$padding-mobile v.$padding-mobile u.rem-calc(40);
+  }
+}
+
+.content {
+  @extend %shadow-left;
+
+  @include b.background(color.get(white), color.get(white-1));
+  margin: auto;
+  max-width: u.rem-calc(1200);
+
+  opacity: 0;
+  padding: u.rem-calc(20);
+  transform: translateY(u.rem-calc(-200)) scale(0.8);
+  transition: 0.35s ease-in-out;
+}
+
+.has-title .content {
+  padding: u.rem-calc(80) u.rem-calc(20) u.rem-calc(20);
+
+  @include bp.down(sm) {
+    padding: u.rem-calc(60) u.rem-calc(20) u.rem-calc(20);
+  }
+}
+
+.header {
+  margin: auto;
+  opacity: 0;
+  position: relative;
+  transform: translateY(u.rem-calc(60)) scale(0.6) rotate(10deg);
+  transition: 0.15s 0.25s ease-out;
+  width: fit-content;
+  z-index: 2;
+
+  @include bp.down(sm) {
+    margin-top: u.rem-calc(20);
+    transform: scale(0.6) rotate(10deg);
+  }
+}
+
+.icon {
+  transform: rotate(180deg);
+  transition: 0.25s;
+}
+
+.close {
+  @extend %shadow-left;
+
+  @include b.background(color.get(yellow), color.get(yellow-1));
+  cursor: pointer;
+  height: u.rem-calc(60);
+  left: u.rem-calc(30);
+  margin-left: auto;
+  opacity: 0;
+  padding: 0;
+  padding: u.rem-calc(5);
+  position: fixed;
+  top: u.rem-calc(30);
+
+  transform: scale(0.6) rotate(35deg);
+  transition: 0.35s cubic-bezier(0.6, 2, 0.8, 0.5);
+  width: u.rem-calc(60);
+  z-index: 2;
+
+  @include bp.down(md) {
+    position: static;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: perspective(u.rem-calc(800)) rotateY(-20deg) scale(1.1)
+      rotate(5deg) scale(1.05);
+
+    .icon {
+      transform: scale(1.2) rotate(180deg);
+    }
+  }
+}
+
+.title {
+  color: color.get(yellow);
+  text-shadow: u.rem-calc(8) u.rem-calc(8) 0 color.get(gray-2);
+
+  @include bp.down(sm) {
+    text-shadow: u.rem-calc(6) u.rem-calc(6) 0 color.get(gray-2);
+  }
+}
+
+.is-open {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.35s;
+
+  .content {
+    opacity: 1;
+    transform: translateY(u.rem-calc(20));
+  }
+
+  .header {
+    opacity: 1;
+    transform: translateY(u.rem-calc(60));
+
+    @include bp.down(sm) {
+      transform: none;
+    }
+  }
+
+  .close {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}

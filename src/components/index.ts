@@ -5,3 +5,5 @@ export { default as FormField } from './FormField';
 export { default as List } from './List';
 export { default as NavLinks } from './NavLinks';
 export { default as PersonalInfoList } from './PersonalInfoList';
+export { default as Popup } from './Popup';
+export { default as Portal } from './Portal';
