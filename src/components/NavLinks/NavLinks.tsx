@@ -6,9 +6,9 @@ import { FC } from 'react';
 /**
  * External dependencies
  */
+import { Button } from '@/components';
 import { LinkData } from '@/types';
 import classes from './NavLinks.module.scss';
-import Button from '../Button/Button';
 
 type NavLinksProps = {
 	links: Array<LinkData>;
@@ -16,8 +16,8 @@ type NavLinksProps = {
 
 const NavLinks: FC<NavLinksProps> = ({ links }) => (
 	<ul className={classes.wrapper}>
-		{links.map(({ label, href }) => (
-			<li>
+		{links.map(({ label, href }, index) => (
+			<li key={index}>
 				<Button href={href} position="right">
 					{label}
 				</Button>
