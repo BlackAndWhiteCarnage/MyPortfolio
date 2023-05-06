@@ -1,0 +1,15 @@
+@use 'scss/unit' as u;
+@use 'scss/breakpoint' as bp;
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(30);
+  list-style: none;
+  width: fit-content;
+
+  @include bp.down(sm) {
+    gap: u.rem-calc(50);
+  }
+}
