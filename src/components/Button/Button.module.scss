@@ -29,9 +29,11 @@
   display: flex;
   font-family: font.get(primary);
   gap: u.rem-calc(15);
+  outline: none;
   transition: 0.35s cubic-bezier(0.6, 2, 0.8, 0.5);
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     @include b.background(color.get(green-2), color.get(green-3));
   }
 
@@ -39,7 +41,8 @@
     padding: u.rem-calc(10) u.rem-calc(20);
     width: fit-content;
 
-    &:hover .icon {
+    &:hover,
+    &:focus-visible .icon {
       transform: translateX(u.rem-calc(15)) scale(1.5);
     }
   }
@@ -48,7 +51,8 @@
 .left {
   @extend %shadow-left;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     transform: perspective(u.rem-calc(800)) rotateY(-20deg) scale(1.1)
       rotate(5deg) scale(1.05);
   }
@@ -57,7 +61,8 @@
 .right {
   @extend %shadow-right;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     transform: perspective(u.rem-calc(800)) rotateY(20deg) scale(1.1)
       rotate(-5deg) scale(1.05);
   }
