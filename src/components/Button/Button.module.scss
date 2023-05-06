@@ -42,8 +42,10 @@
     width: fit-content;
 
     &:hover,
-    &:focus-visible .icon {
-      transform: translateX(u.rem-calc(15)) scale(1.5);
+    &:focus-visible {
+      .icon {
+        transform: translateX(u.rem-calc(15)) scale(1.5);
+      }
     }
   }
 }
