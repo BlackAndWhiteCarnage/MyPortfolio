@@ -27,11 +27,10 @@
 
 .content {
   @extend %shadow-left;
-
   @include b.background(color.get(white), color.get(white-1));
+
   margin: auto;
   max-width: u.rem-calc(1200);
-
   opacity: 0;
   padding: u.rem-calc(20);
   transform: translateY(u.rem-calc(-200)) scale(0.8);
@@ -68,8 +67,8 @@
 
 .close {
   @extend %shadow-left;
-
   @include b.background(color.get(yellow), color.get(yellow-1));
+
   cursor: pointer;
   height: u.rem-calc(60);
   left: u.rem-calc(30);
@@ -79,7 +78,6 @@
   padding: u.rem-calc(5);
   position: fixed;
   top: u.rem-calc(30);
-
   transform: scale(0.6) rotate(35deg);
   transition: 0.35s;
   width: u.rem-calc(60);
