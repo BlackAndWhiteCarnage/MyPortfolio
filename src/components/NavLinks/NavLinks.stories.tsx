@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { StoryObj, Meta } from '@storybook/react';
+import { StoryObj, Meta, StoryFn } from '@storybook/react';
 
 /**
  * Internal dependencies
@@ -19,6 +19,18 @@ export default {
 			},
 		},
 	},
+	decorators: [
+		(Story: StoryFn) => (
+			<div
+				style={{
+					maxWidth: '27.125rem',
+					height: '30rem',
+				}}
+			>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof NavLinks>;
 
 export const Default: StoryObj<typeof NavLinks> = {

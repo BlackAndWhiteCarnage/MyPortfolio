@@ -13,6 +13,8 @@
   display: flex;
   flex-direction: column;
   gap: u.rem-calc(30);
+  height: 100%;
+  justify-content: space-evenly;
   list-style: none;
   padding: u.rem-calc(40) u.rem-calc(20);
 
