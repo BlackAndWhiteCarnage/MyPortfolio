@@ -3,7 +3,7 @@
  */
 import { ErrorMessage } from '@hookform/error-message';
 import { FC, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import classnames from 'classnames/bind';
 import emailjs from 'emailjs-com';
 
@@ -16,6 +16,11 @@ import classes from './ContactForm.module.scss';
 
 const cx = classnames.bind(classes);
 
+type ContactFormFields = {
+	email: string;
+	message: string;
+};
+
 const ContactForm: FC = () => {
 	const [submitdFeedback, setSubmitFeedback] = useState<{
 		type: string;
@@ -26,9 +31,9 @@ const ContactForm: FC = () => {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm();
+	} = useForm<ContactFormFields>();
 
-	const onSubmit = (data: any) => {
+	const onSubmit: SubmitHandler<ContactFormFields> = (data) => {
 		emailjs
 			.send(
 				process.env.REACT_APP_EMAILJS_SERVICE_ID!,
