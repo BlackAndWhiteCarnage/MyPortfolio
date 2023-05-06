@@ -9,9 +9,26 @@
 
 .item {
   @extend %shadow-left;
+
   color: color.get(gray-2);
   list-style: none;
+}
 
+.secondary-variant {
+  display: flex;
+  flex-wrap: wrap;
+  gap: u.rem-calc(20);
+
+  @include bp.down(sm) {
+    gap: u.rem-calc(12);
+  }
+
+  .item {
+    padding: u.rem-calc(10);
+  }
+}
+
+.primary-variant .item {
   padding: u.rem-calc(20);
 
   &::before {
