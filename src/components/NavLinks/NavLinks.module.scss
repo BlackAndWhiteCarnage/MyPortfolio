@@ -1,13 +1,17 @@
-@use 'scss/unit' as u;
 @use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/mixins/background' as b;
+@use 'scss/unit' as u;
 
 .wrapper {
+  @include b.background(color.get(beige), color.get(beige-1));
+
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: u.rem-calc(30);
   list-style: none;
-  width: fit-content;
+  padding: u.rem-calc(40) u.rem-calc(20);
 
   @include bp.down(sm) {
     gap: u.rem-calc(50);
