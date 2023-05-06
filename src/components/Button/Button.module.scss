@@ -1,0 +1,46 @@
+@use 'scss/color';
+@use 'scss/config/variables' as v;
+@use 'scss/font';
+@use 'scss/unit' as u;
+
+.icon {
+  transition: 0.25s;
+  width: u.rem-calc(34);
+}
+
+.button {
+  align-items: center;
+  background: color.get(yellow);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 4 4'%3E%3Cpath fill='%23F5B601' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  border: u.rem-calc(3) solid color.get(gray-2);
+  color: color.get(gray-2);
+  cursor: pointer;
+  display: flex;
+  font-family: font.get(primary);
+  gap: u.rem-calc(15);
+  padding: u.rem-calc(10) u.rem-calc(20);
+  transition: 0.35s cubic-bezier(0.6, 2, 0.8, 0.5);
+  width: fit-content;
+
+  &:hover .icon {
+    transform: translateX(u.rem-calc(15)) scale(1.5);
+  }
+}
+
+.left {
+  box-shadow: v.$shadow-left;
+
+  &:hover {
+    transform: perspective(u.rem-calc(800)) rotateY(-20deg) scale(1.1)
+      rotate(5deg) scale(1.05);
+  }
+}
+
+.right {
+  box-shadow: v.$shadow-right;
+
+  &:hover {
+    transform: perspective(u.rem-calc(800)) rotateY(20deg) scale(1.1)
+      rotate(-5deg) scale(1.05);
+  }
+}
