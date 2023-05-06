@@ -21,6 +21,8 @@
 }
 
 .button {
+  @include b.background(color.get(yellow), color.get(yellow-1));
+
   align-items: center;
   color: color.get(gray-2);
   cursor: pointer;
@@ -29,7 +31,9 @@
   gap: u.rem-calc(15);
   transition: 0.35s cubic-bezier(0.6, 2, 0.8, 0.5);
 
-  @include b.background(color.get(yellow), color.get(yellow-1));
+  &:hover {
+    @include b.background(color.get(green-2), color.get(green-3));
+  }
 
   &:not(.is-iconed-button) {
     padding: u.rem-calc(10) u.rem-calc(20);
