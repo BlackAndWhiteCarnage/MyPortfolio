@@ -81,7 +81,7 @@
   top: u.rem-calc(30);
 
   transform: scale(0.6) rotate(35deg);
-  transition: 0.35s cubic-bezier(0.6, 2, 0.8, 0.5);
+  transition: 0.35s;
   width: u.rem-calc(60);
   z-index: 2;
 
@@ -131,5 +131,6 @@
   .close {
     opacity: 1;
     transform: scale(1) rotate(0);
+    transition: 0.35s cubic-bezier(0.6, 2, 0.8, 0.5);
   }
 }
