@@ -1,0 +1,15 @@
+@use 'scss/unit' as u;
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(100);
+  height: u.rem-calc(800);
+  justify-content: center;
+  margin: auto;
+
+  * {
+    font-size: u.rem-calc(32);
+  }
+}
