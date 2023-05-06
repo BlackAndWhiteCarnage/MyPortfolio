@@ -6,13 +6,27 @@ $heading-tags: (h1, h2, h3, h4, h5, h6);
 
 $styles: (
   h1: (
-    font-size: 96,
-    line-height: 110,
-    font-weight: 400,
-    font-family: 'primary',
-    xs: (
-      font-size: 40,
-      line-height: 46,
+    font-size: 120,
+    lg: (
+      font-size: 80,
     ),
+    sm: (
+      font-size: 50,
+    ),
+  ),
+  h2: (
+    font-size: 36,
+    sm: (
+      font-size: 26,
+    ),
+  ),
+  text: (
+    font-size: 26,
+    sm: (
+      font-size: 20,
+    ),
+  ),
+  text-large: (
+    font-size: 26,
   ),
 );
