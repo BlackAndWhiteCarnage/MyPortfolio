@@ -13,6 +13,13 @@ import Button from '.';
 export default {
 	title: 'Components/Button',
 	component: Button,
+	argTypes: {
+		icon: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 } satisfies Meta<typeof Button>;
 
 const DefaultProps: ButtonProps = {
