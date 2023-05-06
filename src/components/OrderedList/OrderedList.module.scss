@@ -1,0 +1,29 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
+
+.wrapper {
+  counter-reset: list-counter;
+}
+
+.item {
+  @extend %shadow-left;
+  color: color.get(gray-2);
+  list-style: none;
+
+  padding: u.rem-calc(20);
+
+  &::before {
+    content: '#' counter(list-counter) '. ';
+    counter-increment: list-counter;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: u.rem-calc(30);
+
+    @include bp.down(sm) {
+      margin-bottom: u.rem-calc(15);
+    }
+  }
+}
