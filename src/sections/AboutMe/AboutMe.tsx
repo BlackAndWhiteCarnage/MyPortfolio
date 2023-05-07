@@ -7,9 +7,10 @@ import classnames from 'classnames/bind';
 /**
  * Internal dependencies
  */
+import { Button, List } from '@/components';
 import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
 import { ReactComponent as DocumentIcon } from '@/icons/file.svg';
-import { Button, List } from '@/components';
+import { skills } from '@/config';
 import classes from './AboutMe.module.scss';
 
 const cx = classnames.bind(classes);
@@ -43,26 +44,7 @@ const AboutMe: FC = () => (
 			<h2 id="about-me" className={classes.title}>
 				My Skills
 			</h2>
-			<List
-				items={[
-					'Html',
-					'Css',
-					'Scss',
-					'Styled-components',
-					'Css Modules',
-					'JavaScript',
-					'TypeScript',
-					'React',
-					'Next.js',
-					'Graphql Basics',
-					'Storybook',
-					'React testing library',
-					'PHP Basics',
-					'Three.js Basics',
-					'Figma',
-				]}
-				variant="secondary"
-			/>
+			<List items={skills} variant="secondary" />
 		</div>
 	</div>
 );
