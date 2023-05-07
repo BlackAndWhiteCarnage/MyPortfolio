@@ -1,0 +1,12 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+.wrapper {
+  @include bp.down(md) {
+    margin: u.rem-calc(200) 0;
+  }
+
+  @include bp.down(sm) {
+    margin: u.rem-calc(100) 0;
+  }
+}
