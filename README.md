@@ -76,7 +76,7 @@ https://github.com/BlackAndWhiteCarnage/MyPortfolio/blob/develop/package.json
 
 ### Projects (empty for now, read info from screenshot 😔)
 
-<img src="./readmeImages/projects.png" alt="Projects" width='100%'/>
+<img src="./readmeImages/projects.jpg" alt="Projects" width='100%'/>
 
 ### Contact
 
