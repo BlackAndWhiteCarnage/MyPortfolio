@@ -18,27 +18,25 @@
   display: flex;
   gap: u.rem-calc(30);
   justify-content: space-between;
+  margin: u.rem-calc(80) 0 u.rem-calc(60);
   min-height: 100vh;
 
-  @include bp.down(sm) {
-    align-items: flex-start;
+  @include bp.down(md) {
     flex-direction: column;
-    margin-top: u.rem-calc(80);
+    gap: u.rem-calc(100);
     min-height: unset;
   }
 }
 
 .form {
   max-width: u.rem-calc(560);
+  transform: perspective(u.rem-calc(800)) rotateY(10deg) scale(1.1);
   width: 100%;
-
-  @include bp.down(sm) {
-    max-width: unset;
-  }
 }
 
 .personalInfo {
   max-width: u.rem-calc(400);
+  transform: perspective(u.rem-calc(800)) rotateY(-10deg) scale(1.1);
   width: 100%;
 }
 

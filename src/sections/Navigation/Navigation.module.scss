@@ -26,20 +26,9 @@
   justify-content: space-between;
   min-height: 100vh;
 
-  :global(.atropos-inner) {
-    overflow: visible !important;
-  }
-
-  :global(.atropos-scale) {
-    pointer-events: none;
-  }
-
-  :global(.atropos-rotate) {
-    pointer-events: all;
-  }
-
   @include bp.down(sm) {
     flex-direction: column;
+    gap: u.rem-calc(100);
     min-height: unset;
   }
 }
