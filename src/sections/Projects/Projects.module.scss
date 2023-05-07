@@ -2,8 +2,13 @@
 @use 'scss/unit' as u;
 
 .wrapper {
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+
   @include bp.down(md) {
     margin: u.rem-calc(200) 0;
+    min-height: unset;
   }
 
   @include bp.down(sm) {

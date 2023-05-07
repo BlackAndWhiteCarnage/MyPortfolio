@@ -14,8 +14,8 @@
 
 .paperLayer {
   @extend %layer;
-  object-fit: cover;
 
+  object-fit: cover;
   z-index: 3;
 }
 
