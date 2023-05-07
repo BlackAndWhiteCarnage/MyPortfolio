@@ -12,7 +12,7 @@
 .wrapper {
   align-items: center;
   display: flex;
-  gap: u.rem-calc(30);
+  gap: u.rem-calc(50);
   justify-content: space-between;
   min-height: 100vh;
 
@@ -30,10 +30,12 @@
 
 .about {
   max-width: u.rem-calc(500);
-  transform: perspective(u.rem-calc(800)) rotateY(15deg) scale(1.1);
+  transform: perspective(u.rem-calc(800)) rotateY(15deg) scale(1.1)
+    translateX(u.rem-calc(30));
 
   @include bp.down(md) {
-    max-width: unset;
+    max-width: 85%;
+    transform: perspective(u.rem-calc(700)) rotateY(5deg) scale(1.1);
   }
 }
 
@@ -61,4 +63,8 @@
 .skillsList {
   animation: skillsAnimation 3s infinite;
   transform: perspective(u.rem-calc(800)) rotateY(-15deg) scale(1.05);
+
+  @include bp.down(md) {
+    transform: none;
+  }
 }
