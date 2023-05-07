@@ -2,12 +2,41 @@
 @use 'scss/placeholders/shadows';
 @use 'scss/unit' as u;
 
+@keyframes rotateImageAnimation {
+  55% {
+    transform: perspective(u.rem-calc(800)) rotateY(25deg) rotateX(5deg)
+      translateY(u.rem-calc(5)) scale(1.1);
+  }
+}
+
+@keyframes rotateLinksAnimation {
+  25% {
+    transform: rotateY(5deg);
+  }
+
+  75% {
+    transform: rotateY(2deg) rotate(5deg);
+  }
+}
+
 .wrapper {
   align-items: center;
   display: flex;
   gap: u.rem-calc(30);
   justify-content: space-between;
   min-height: 100vh;
+
+  :global(.atropos-inner) {
+    overflow: visible !important;
+  }
+
+  :global(.atropos-scale) {
+    pointer-events: none;
+  }
+
+  :global(.atropos-rotate) {
+    pointer-events: all;
+  }
 
   @include bp.down(sm) {
     flex-direction: column;
@@ -17,8 +46,9 @@
 
 .image {
   @extend %shadow-left;
-  height: u.rem-calc(500);
 
+  animation: rotateImageAnimation 6s infinite;
+  height: u.rem-calc(500);
   max-width: u.rem-calc(400);
 
   @include bp.down(sm) {
@@ -29,8 +59,10 @@
 }
 
 .links {
+  animation: rotateLinksAnimation 3s infinite alternate;
   height: u.rem-calc(500);
   max-width: u.rem-calc(500);
+  transform: perspective(u.rem-calc(800)) rotateY(-2deg) scale(1.1);
   width: 100%;
 
   @include bp.down(sm) {
