@@ -1,0 +1,41 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  gap: u.rem-calc(30);
+  justify-content: space-between;
+  min-height: 100vh;
+
+  @include bp.down(sm) {
+    flex-direction: column;
+    min-height: unset;
+  }
+}
+
+.image {
+  @extend %shadow-left;
+  height: u.rem-calc(500);
+
+  max-width: u.rem-calc(400);
+
+  @include bp.down(sm) {
+    height: unset;
+    max-width: unset;
+    width: 100%;
+  }
+}
+
+.links {
+  height: u.rem-calc(500);
+  max-width: u.rem-calc(500);
+  width: 100%;
+
+  @include bp.down(sm) {
+    height: unset;
+    max-width: unset;
+    width: 100%;
+  }
+}

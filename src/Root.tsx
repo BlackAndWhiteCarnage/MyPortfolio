@@ -7,6 +7,7 @@ import { FC } from 'react';
  * Internal dependencies
  */
 import { Background, Cursor } from '@/components';
+import { Navigation } from '@/sections';
 import { ReactComponent as HeroLandscape } from '@/images/hero-landscape.svg';
 import { ReactComponent as HeroPortrait } from '@/images/hero-portrait.svg';
 import classes from './Root.module.scss';
@@ -22,6 +23,9 @@ const Root: FC = () => (
 			landscape={HeroLandscape}
 			portrait={HeroPortrait}
 		/>
+		<div className={classes.content}>
+			<Navigation />
+		</div>
 	</>
 );
 

@@ -1,5 +1,8 @@
+@use 'scss/breakpoint' as bp;
 @use 'scss/color';
+@use 'scss/config/variables' as v;
 @use 'scss/mixins/background' as b;
+@use 'scss/unit' as u;
 
 %layer {
   height: 100%;
@@ -7,15 +10,31 @@
   pointer-events: none;
   position: fixed;
   width: 100%;
-  z-index: 1;
 }
 
 .paperLayer {
   @extend %layer;
+  object-fit: cover;
+
+  z-index: 3;
 }
 
 .comicLayer {
   @extend %layer;
 
   @include b.background(color.get(white), color.get(beige-1));
+
+  z-index: 1;
+}
+
+.content {
+  margin: auto;
+  max-width: u.rem-calc(1200);
+  padding: 0 v.$padding;
+  position: relative;
+  z-index: 2;
+
+  @include bp.down(sm) {
+    padding: v.$padding-mobile;
+  }
 }
