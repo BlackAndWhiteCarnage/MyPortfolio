@@ -12,6 +12,6 @@
   }
 
   @include bp.down(sm) {
-    margin: u.rem-calc(100) 0;
+    margin: u.rem-calc(100) 0 u.rem-calc(200);
   }
 }

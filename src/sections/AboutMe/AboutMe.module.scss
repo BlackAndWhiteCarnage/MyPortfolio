@@ -48,9 +48,9 @@
 
 .skills {
   max-width: u.rem-calc(500);
+  transform: perspective(u.rem-calc(800)) rotateY(-15deg) scale(1.05);
 }
 
 .skillsList {
   animation: skillsAnimation 3s infinite;
-  transform: perspective(u.rem-calc(800)) rotateY(-15deg) scale(1.05);
 }

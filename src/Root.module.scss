@@ -28,9 +28,12 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(100);
   margin: auto;
   max-width: u.rem-calc(1200);
-  padding: 0 v.$padding;
+  padding: v.$padding;
   position: relative;
   z-index: 2;
 
@@ -39,6 +42,7 @@
   }
 
   @include bp.down(sm) {
+    gap: u.rem-calc(50);
     padding: v.$padding-mobile;
   }
 }

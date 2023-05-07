@@ -26,7 +26,7 @@
   justify-content: space-between;
   min-height: 100vh;
 
-  @include bp.down(sm) {
+  @include bp.down(md) {
     flex-direction: column;
     gap: u.rem-calc(100);
     min-height: unset;
@@ -39,11 +39,10 @@
   animation: rotateImageAnimation 6s infinite;
   height: u.rem-calc(500);
   max-width: u.rem-calc(400);
+  width: 100%;
 
-  @include bp.down(sm) {
+  @include bp.down(md) {
     height: unset;
-    max-width: unset;
-    width: 80%;
   }
 }
 
@@ -54,9 +53,7 @@
   transform: perspective(u.rem-calc(800)) rotateY(-2deg) scale(1.1);
   width: 100%;
 
-  @include bp.down(sm) {
+  @include bp.down(md) {
     height: unset;
-    max-width: unset;
-    width: 85%;
   }
 }
