@@ -17,7 +17,8 @@ Hi! My name is Chris and this is my portfolio. The most important thing for me w
 
 ## Used Technologies
 
-Checkout devDependencies & dependencies:
+Checkout `devDependencies` & `dependencies`:
+<br />
 https://github.com/BlackAndWhiteCarnage/MyPortfolio/blob/develop/package.json
 
 <br />
@@ -26,8 +27,8 @@ https://github.com/BlackAndWhiteCarnage/MyPortfolio/blob/develop/package.json
 
 - Some things look like 3D (idk how to call it, you shoud see it)
 - Projects slider
-- Sending email
-- Form validation with react-hook-form
+- Sending email with `emailjs`
+- Form validation with `react-hook-form`
 - Custom cursor
 - Stories
 - A bit of humor 😅
