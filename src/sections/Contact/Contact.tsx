@@ -9,9 +9,9 @@ import classnames from 'classnames/bind';
  */
 import { Button, ContactForm, PersonalInfoList } from '@/components';
 import { personalInfo } from '@/config';
+import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
 import { ReactComponent as QrCode } from '@/images/qr-code.svg';
 import classes from './Contact.module.scss';
-import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
 
 const cx = classnames.bind(classes);
 
