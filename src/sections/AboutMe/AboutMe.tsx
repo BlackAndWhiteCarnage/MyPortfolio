@@ -2,20 +2,25 @@
  * External dependencies
  */
 import { FC } from 'react';
+import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
  */
 import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
 import { ReactComponent as DocumentIcon } from '@/icons/file.svg';
-import { Button, Slider, Poster } from '@/components';
+import { Button, List } from '@/components';
 import classes from './AboutMe.module.scss';
+
+const cx = classnames.bind(classes);
 
 const AboutMe: FC = () => (
 	<div className={classes.wrapper}>
 		<div className={classes.about}>
-			<h2 id="about-me">About Me</h2>
-			<p>
+			<h2 id="about-me" className={classes.title}>
+				About Me
+			</h2>
+			<p className={cx('description', 'is-style-text')}>
 				I wonder if someone ever reads "About Me". That's cool if you
 				are a recruiter who's actually doing that. I've heard that you
 				have something like 30 seconds to check resume and portfolio of
@@ -35,7 +40,29 @@ const AboutMe: FC = () => (
 			</div>
 		</div>
 		<div className={classes.skills}>
-			<h2 id="about-me">My Skills</h2>
+			<h2 id="about-me" className={classes.title}>
+				My Skills
+			</h2>
+			<List
+				items={[
+					'Html',
+					'Css',
+					'Scss',
+					'Styled-components',
+					'Css Modules',
+					'JavaScript',
+					'TypeScript',
+					'React',
+					'Next.js',
+					'Graphql Basics',
+					'Storybook',
+					'React testing library',
+					'PHP Basics',
+					'Three.js Basics',
+					'Figma',
+				]}
+				variant="secondary"
+			/>
 		</div>
 	</div>
 );
