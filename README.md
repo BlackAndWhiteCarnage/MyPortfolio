@@ -26,8 +26,8 @@ https://github.com/BlackAndWhiteCarnage/MyPortfolio/blob/develop/package.json
 
 - Some things look like 3D (idk how to call it, you shoud see it)
 - Projects slider
-- Sending email
-- Form validation with react-hook-form
+- Sending email with `emailjs`
+- Form validation with `react-hook-form`
 - Custom cursor
 - Stories
 - A bit of humor 😅
