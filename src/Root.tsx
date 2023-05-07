@@ -15,6 +15,7 @@ import PaperLayer from '@/images/paper.jpg';
 const Root: FC = () => (
 	<>
 		<img src={PaperLayer} alt="" className={classes.paperLayer} />
+		<div className={classes.comicLayer} />
 		<Background
 			animation="rotate"
 			landscape={HeroLandscape}
