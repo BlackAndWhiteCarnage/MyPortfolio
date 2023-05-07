@@ -54,3 +54,20 @@
 .skillsList {
   animation: skillsAnimation 3s infinite;
 }
+
+.moreAboutMe {
+  color: color.get(gray-2);
+  padding: u.rem-calc(20);
+
+  @include bp.down(sm) {
+    padding: 0;
+  }
+
+  h2 {
+    margin-bottom: u.rem-calc(20);
+  }
+
+  section:not(:last-child) {
+    margin-bottom: u.rem-calc(40);
+  }
+}

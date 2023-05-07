@@ -18,7 +18,7 @@
   top: 0;
   transition: 0.35s 0.35s;
   width: 100%;
-  z-index: 10000;
+  z-index: 2;
 
   @include bp.down(sm) {
     padding: v.$padding-mobile v.$padding-mobile u.rem-calc(40);
