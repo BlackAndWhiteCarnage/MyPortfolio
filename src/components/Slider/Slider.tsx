@@ -2,10 +2,10 @@
  * External dependencies
  */
 import { FC, ReactElement } from 'react';
-import { Pagination } from 'swiper';
+import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide, SwiperProps } from 'swiper/react';
-import classnames from 'classnames/bind';
 import Atropos from 'atropos/react';
+import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
@@ -20,49 +20,67 @@ type SliderProps = {
 
 const cx = classnames.bind(classes);
 
-const Slider: FC<SliderProps> = ({ children, className, ...props }) => {
-	return (
-		<div className={cx('wrapper', className)}>
-			<Atropos
-				rotateTouch="scroll-y"
-				rotateYMax={6}
-				rotateXMax={6}
-				shadow={false}
-				highlight={false}
-				className={classes.innerWrap}
-			>
-				<Swiper
-					modules={[Pagination]}
-					className={classes.swiperWrapper}
-					slidesPerView="auto"
-					centeredSlides
-					pagination={{
-						clickable: true,
-					}}
-					initialSlide={1}
-					slideToClickedSlide
-					{...props}
-				>
-					{children.map((item, index) => (
-						<SwiperSlide
-							key={index}
-							className={classes.slideWrapper}
+const Slider: FC<SliderProps> = ({
+	children,
+	className,
+	variant = 'primary',
+	...props
+}) => {
+	const isPrimaryVariant = variant === 'primary';
+
+	const swiper = (
+		<Swiper
+			modules={[Pagination, Autoplay]}
+			className={classes.swiperWrapper}
+			slidesPerView="auto"
+			centeredSlides
+			direction={isPrimaryVariant ? 'horizontal' : 'vertical'}
+			pagination={{
+				clickable: true,
+			}}
+			initialSlide={1}
+			slideToClickedSlide={isPrimaryVariant}
+			autoplay={
+				!isPrimaryVariant && {
+					delay: 1200,
+				}
+			}
+			{...props}
+		>
+			{children.map((item, index) => (
+				<SwiperSlide key={index} className={classes.slideWrapper}>
+					{({ isActive, isNext, isPrev }) => (
+						<div
+							className={cx('slide', {
+								isActive,
+								isNext,
+								isPrev,
+							})}
 						>
-							{({ isActive, isNext, isPrev }) => (
-								<div
-									className={cx('slide', {
-										middleSlide: isActive,
-										rightSlide: isNext,
-										leftSlide: isPrev,
-									})}
-								>
-									{item}
-								</div>
-							)}
-						</SwiperSlide>
-					))}
-				</Swiper>
-			</Atropos>
+							{item}
+						</div>
+					)}
+				</SwiperSlide>
+			))}
+		</Swiper>
+	);
+
+	return (
+		<div className={cx('wrapper', `is-${variant}-variant`, className)}>
+			{isPrimaryVariant ? (
+				<Atropos
+					rotateTouch="scroll-y"
+					rotateYMax={6}
+					rotateXMax={6}
+					shadow={false}
+					highlight={false}
+					className={classes.innerWrap}
+				>
+					{swiper}
+				</Atropos>
+			) : (
+				swiper
+			)}
 		</div>
 	);
 };

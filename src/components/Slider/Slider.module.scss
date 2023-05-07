@@ -1,6 +1,5 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/unit' as u;
-@use 'scss/color' as c;
 
 @mixin slide-transform(
   $rotate: 17deg,
@@ -22,26 +21,12 @@
 .wrapper {
   position: relative;
 
-  :global(.swiper-pagination) {
-    margin-top: u.rem-calc(40);
-    position: static;
-  }
-
   :global(.swiper) {
     overflow: visible !important;
   }
 
-  :global(.swiper-pagination-bullet-active) {
-    background: var(--theme-color-secondary) !important;
-  }
-
   :global(.atropos-inner) {
     overflow: visible !important;
-  }
-
-  :global(.swiper-pagination-bullet) {
-    height: u.rem-calc(10);
-    width: u.rem-calc(10);
   }
 
   :global(.swiper-slide-next) {
@@ -58,32 +43,57 @@
 }
 
 .swiperWrapper {
-  max-width: u.rem-calc(1600);
+  max-height: u.rem-calc(400);
   overflow: visible;
   width: 100%;
 }
 
 .slideWrapper {
-  max-width: u.rem-calc(542);
+  max-width: u.rem-calc(500);
+}
+
+.is-secondary-variant {
+  .isNext,
+  .isPrev {
+    transform: scale(0.7);
+  }
+
+  .slideWrapper {
+    margin: auto;
+    max-width: u.rem-calc(400);
+  }
+
+  .swiperWrapper {
+    max-height: u.rem-calc(400);
+    max-width: u.rem-calc(500);
+    overflow: hidden !important;
+  }
+}
+
+.is-primary-variant {
+  .isNext {
+    @include slide-transform();
+
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  .isPrev {
+    @include slide-transform(-17deg, -50, 70);
+
+    opacity: 0.65;
+    pointer-events: none;
+  }
 }
 
 .slide {
   cursor: pointer;
-  max-width: u.rem-calc(542);
   transition: 0.4s;
   width: 100%;
 
-  &:not(.middleSlide, .leftSlide, .rightSlide) {
+  &:not(.isActive, .isNext, .isPrev) {
     opacity: 0;
-    transform: translateY(u.rem-calc(200)) scale(0.6) !important;
+    transform: translateY(u.rem-calc(200)) scale(0.6);
     transition: 0.4s !important;
   }
-}
-
-.rightSlide {
-  @include slide-transform();
-}
-
-.leftSlide {
-  @include slide-transform(-17deg, -50, 70);
 }
