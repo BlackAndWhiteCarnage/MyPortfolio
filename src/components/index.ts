@@ -8,4 +8,5 @@ export { default as NavLinks } from './NavLinks';
 export { default as PersonalInfoList } from './PersonalInfoList';
 export { default as Popup } from './Popup';
 export { default as Portal } from './Portal';
+export { default as Poster } from './Poster';
 export { default as ProjectDescription } from './ProjectDescription';
