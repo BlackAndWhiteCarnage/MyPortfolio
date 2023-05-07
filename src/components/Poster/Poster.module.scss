@@ -1,0 +1,52 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/mixins/background' as b;
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
+
+.wrapper {
+  @extend %shadow-left;
+
+  @include b.background(color.get(green-2), color.get(green-3));
+
+  display: flex;
+}
+
+.image {
+  @extend %shadow-left;
+
+  object-fit: cover;
+  transition: 0.35s;
+  width: 100%;
+}
+
+.is-primary-variant .image {
+  max-height: u.rem-calc(500);
+
+  @include bp.down(sm) {
+    max-height: u.rem-calc(350);
+  }
+}
+
+.is-secondary-variant {
+  @include b.background(color.get(yellow), color.get(yellow-1));
+
+  width: 100%;
+
+  .image {
+    max-height: u.rem-calc(130);
+    transform: perspective(u.rem-calc(800)) rotateY(10deg) rotate(-2deg);
+
+    @include bp.down(sm) {
+      max-height: u.rem-calc(110);
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+
+  &:hover .image {
+    transform: perspective(u.rem-calc(800)) rotateY(10deg) rotate(-2deg);
+  }
+}
