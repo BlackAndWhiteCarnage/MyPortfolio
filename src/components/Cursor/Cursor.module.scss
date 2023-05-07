@@ -56,7 +56,7 @@
   position: fixed;
   transform: translateX(u.rem-calc(-15));
   width: u.rem-calc(100);
-  z-index: 99999;
+  z-index: 3;
 
   &.isWaiting {
     .hand {
