@@ -1,0 +1,59 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  gap: u.rem-calc(30);
+  justify-content: space-between;
+  min-height: 100vh;
+
+  @include bp.down(sm) {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: u.rem-calc(80);
+    min-height: unset;
+  }
+}
+
+.form {
+  max-width: u.rem-calc(560);
+  width: 100%;
+
+  @include bp.down(sm) {
+    max-width: unset;
+  }
+}
+
+.personalInfo {
+  max-width: u.rem-calc(400);
+  width: 100%;
+}
+
+.title {
+  color: color.get(gray-2);
+  margin-bottom: u.rem-calc(20);
+}
+
+.other {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(15);
+  margin-top: u.rem-calc(20);
+}
+
+.qrCode {
+  max-width: u.rem-calc(200);
+}
+
+.code {
+  @extend %shadow-right;
+}
+
+.info {
+  color: color.get(red-3);
+  display: block;
+  margin-top: u.rem-calc(10);
+}

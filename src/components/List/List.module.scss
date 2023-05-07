@@ -10,6 +10,7 @@
 
 .item {
   @extend %shadow-left;
+
   @include b.background(color.get(beige), color.get(beige-1));
 
   color: color.get(gray-2);
