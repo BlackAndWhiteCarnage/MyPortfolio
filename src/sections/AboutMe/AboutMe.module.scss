@@ -3,6 +3,12 @@
 @use 'scss/placeholders/shadows';
 @use 'scss/unit' as u;
 
+@keyframes skillsAnimation {
+  50% {
+    transform: perspective(u.rem-calc(800)) rotate(2deg) scale(1);
+  }
+}
+
 .wrapper {
   align-items: center;
   display: flex;
@@ -24,6 +30,7 @@
 
 .about {
   max-width: u.rem-calc(500);
+  transform: perspective(u.rem-calc(800)) rotateY(15deg) scale(1.1);
 
   @include bp.down(md) {
     max-width: unset;
@@ -49,4 +56,9 @@
     margin-top: u.rem-calc(20);
     max-width: unset;
   }
+}
+
+.skillsList {
+  animation: skillsAnimation 3s infinite;
+  transform: perspective(u.rem-calc(800)) rotateY(-15deg) scale(1.05);
 }

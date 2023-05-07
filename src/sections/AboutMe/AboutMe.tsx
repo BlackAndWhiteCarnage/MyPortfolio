@@ -50,7 +50,11 @@ const AboutMe: FC = () => (
 			<h2 id="about-me" className={classes.title}>
 				My Skills
 			</h2>
-			<List items={skills} variant="secondary" />
+			<List
+				items={skills}
+				variant="secondary"
+				className={classes.skillsList}
+			/>
 		</div>
 	</div>
 );

@@ -10,14 +10,15 @@ import classnames from 'classnames/bind';
 import classes from './List.module.scss';
 
 type ListProps = {
+	className?: string;
 	items: Array<string>;
 	variant?: 'primary' | 'secondary';
 };
 
 const cx = classnames.bind(classes);
 
-const List: FC<ListProps> = ({ items, variant = 'primary' }) => (
-	<ol className={cx('wrapper', `${variant}-variant`)}>
+const List: FC<ListProps> = ({ className, items, variant = 'primary' }) => (
+	<ol className={cx('wrapper', className, `${variant}-variant`)}>
 		{items.map((value, index) => (
 			<li key={index} className={cx('item', 'is-style-text')}>
 				{value}
