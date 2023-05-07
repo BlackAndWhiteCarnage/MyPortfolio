@@ -12,6 +12,7 @@ import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
 import { ReactComponent as DocumentIcon } from '@/icons/file.svg';
 import { skills } from '@/config';
 import classes from './AboutMe.module.scss';
+import resume from '@/files/resume.pdf';
 
 const cx = classnames.bind(classes);
 
@@ -35,7 +36,12 @@ const AboutMe: FC = () => (
 				<Button position="left" icon={ArrowIcon}>
 					Read More
 				</Button>
-				<Button position="left" icon={DocumentIcon}>
+				<Button
+					position="left"
+					icon={DocumentIcon}
+					href={resume}
+					target="_blank"
+				>
 					My Resume
 				</Button>
 			</div>

@@ -27,7 +27,7 @@ module.exports = {
 				use: 'ts-loader',
 			},
 			{
-				test: /\.(png|jpe?g|gif)$/i,
+				test: /\.(pdf|png|jpe?g|gif)$/i,
 				use: [
 					{
 						loader: 'file-loader',

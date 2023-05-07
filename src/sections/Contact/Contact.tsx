@@ -12,6 +12,7 @@ import { personalInfo } from '@/config';
 import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
 import { ReactComponent as QrCode } from '@/images/qr-code.svg';
 import classes from './Contact.module.scss';
+import reference from '@/files/reference.pdf';
 
 const cx = classnames.bind(classes);
 
@@ -30,10 +31,20 @@ const Contact: FC = () => (
 						Don't scan this!
 					</span>
 				</div>
-				<Button position="right" icon={ArrowIcon}>
+				<Button
+					position="right"
+					icon={ArrowIcon}
+					href="https://github.com/BlackAndWhiteCarnage/MyPortfolio"
+					target="_blank"
+				>
 					This portfolio reposytory
 				</Button>
-				<Button position="right" icon={ArrowIcon}>
+				<Button
+					position="right"
+					icon={ArrowIcon}
+					href={reference}
+					target="_blank"
+				>
 					Check out my reference
 				</Button>
 			</div>
