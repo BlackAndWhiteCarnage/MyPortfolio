@@ -27,6 +27,14 @@ module.exports = {
 				use: 'ts-loader',
 			},
 			{
+				test: /\.(png|jpe?g|gif)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+					},
+				],
+			},
+			{
 				test: /\.svg$/,
 				use: ['@svgr/webpack', 'svgo-loader'],
 			},
