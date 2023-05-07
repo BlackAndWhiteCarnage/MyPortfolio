@@ -1,4 +1,4 @@
-<img src="./src/assets/images/myPhoto.jpg" alt="Portfolio poster" width='100%'/>
+<img src="./src/images/me.jpg" alt="Portfolio poster" width='100%'/>
 
 <br />
 <br />
