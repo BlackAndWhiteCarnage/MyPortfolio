@@ -16,6 +16,7 @@
   @extend %shadow-left;
 
   object-fit: cover;
+  pointer-events: none;
   transition: 0.35s;
   width: 100%;
 }
