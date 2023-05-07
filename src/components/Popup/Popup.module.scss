@@ -88,16 +88,6 @@
   @include bp.down(md) {
     position: static;
   }
-
-  &:hover,
-  &:focus-visible {
-    transform: perspective(u.rem-calc(800)) rotateY(-20deg) scale(1.1)
-      rotate(5deg) scale(1.05);
-
-    .icon {
-      transform: scale(1.2) rotate(180deg);
-    }
-  }
 }
 
 .title {
@@ -132,5 +122,17 @@
     opacity: 1;
     transform: scale(1) rotate(0);
     transition: 0.35s cubic-bezier(0.6, 2, 0.8, 0.5);
+
+    &:hover,
+    &:focus-visible {
+      @include b.background(color.get(green-2), color.get(green-3));
+
+      transform: perspective(u.rem-calc(800)) rotateY(-20deg) scale(1.1)
+        rotate(5deg) scale(1.05);
+
+      .icon {
+        transform: scale(1.2) rotate(180deg);
+      }
+    }
   }
 }
