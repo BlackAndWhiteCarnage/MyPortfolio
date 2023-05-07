@@ -21,10 +21,10 @@
 }
 
 .is-primary-variant .image {
-  max-height: u.rem-calc(500);
+  min-height: u.rem-calc(500);
 
   @include bp.down(sm) {
-    max-height: u.rem-calc(350);
+    min-height: u.rem-calc(350);
   }
 }
 

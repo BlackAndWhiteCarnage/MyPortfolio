@@ -10,3 +10,4 @@ export { default as Popup } from './Popup';
 export { default as Portal } from './Portal';
 export { default as Poster } from './Poster';
 export { default as ProjectDescription } from './ProjectDescription';
+export { default as Slider } from './Slider';

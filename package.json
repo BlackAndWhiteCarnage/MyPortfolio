@@ -58,6 +58,7 @@
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
     "@svgr/webpack": "^7.0.0",
+    "atropos": "^1.0.2",
     "classnames": "^2.3.2",
     "css-loader": "^6.7.3",
     "emailjs-com": "^3.2.0",
@@ -67,6 +68,7 @@
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
     "svgo-loader": "^4.0.0",
+    "swiper": "^9.2.4",
     "ts-loader": "^9.4.2",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "url-loader": "^4.1.1"
