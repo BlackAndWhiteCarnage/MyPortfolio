@@ -1,0 +1,35 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/placeholders/shadows';
+@use 'scss/unit' as u;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(20);
+}
+
+.image {
+  @extend %shadow-left;
+}
+
+.links {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: u.rem-calc(10);
+  justify-content: space-between;
+}
+
+.title {
+  color: color.get(gray-2);
+  margin-top: u.rem-calc(30);
+
+  @include bp.down(sm) {
+    margin-top: u.rem-calc(15);
+  }
+}
+
+.description {
+  color: color.get(gray-2);
+}
