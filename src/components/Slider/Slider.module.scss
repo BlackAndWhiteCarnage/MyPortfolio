@@ -1,0 +1,89 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+@use 'scss/color' as c;
+
+@mixin slide-transform(
+  $rotate: 17deg,
+  $translate-mobile-x: 50,
+  $translate-mobile-y: 70
+) {
+  transform: rotate($rotate) translateY(u.rem-calc(60)) scale(0.9) !important;
+
+  @include bp.down(lg) {
+    transform: rotate($rotate)
+      translate(
+        u.rem-calc($translate-mobile-x),
+        u.rem-calc($translate-mobile-y)
+      )
+      scale(0.9) !important;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  :global(.swiper-pagination) {
+    margin-top: u.rem-calc(40);
+    position: static;
+  }
+
+  :global(.swiper) {
+    overflow: visible !important;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background: var(--theme-color-secondary) !important;
+  }
+
+  :global(.atropos-inner) {
+    overflow: visible !important;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    height: u.rem-calc(10);
+    width: u.rem-calc(10);
+  }
+
+  :global(.swiper-slide-next) {
+    z-index: -1;
+  }
+
+  :global(.atropos-scale) {
+    pointer-events: none;
+  }
+
+  :global(.atropos-rotate) {
+    pointer-events: all;
+  }
+}
+
+.swiperWrapper {
+  max-width: u.rem-calc(1600);
+  overflow: visible;
+  width: 100%;
+}
+
+.slideWrapper {
+  max-width: u.rem-calc(542);
+}
+
+.slide {
+  cursor: pointer;
+  max-width: u.rem-calc(542);
+  transition: 0.4s;
+  width: 100%;
+
+  &:not(.middleSlide, .leftSlide, .rightSlide) {
+    opacity: 0;
+    transform: translateY(u.rem-calc(200)) scale(0.6) !important;
+    transition: 0.4s !important;
+  }
+}
+
+.rightSlide {
+  @include slide-transform();
+}
+
+.leftSlide {
+  @include slide-transform(-17deg, -50, 70);
+}

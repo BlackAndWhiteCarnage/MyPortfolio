@@ -9,3 +9,4 @@ export { default as PersonalInfoList } from './PersonalInfoList';
 export { default as Popup } from './Popup';
 export { default as Portal } from './Portal';
 export { default as ProjectDescription } from './ProjectDescription';
+export { default as Slider } from './Slider';
