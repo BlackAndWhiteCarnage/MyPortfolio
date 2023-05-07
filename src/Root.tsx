@@ -7,7 +7,7 @@ import { FC } from 'react';
  * Internal dependencies
  */
 import { AboutMe, Contact, Projects, Navigation } from '@/sections';
-import { Background, Button, Cursor } from '@/components';
+import { Button, Cursor } from '@/components';
 import { ReactComponent as HeroLandscape } from '@/images/hero-landscape.svg';
 import { ReactComponent as HeroPortrait } from '@/images/hero-portrait.svg';
 import { socialIcons } from './config';
@@ -19,11 +19,10 @@ const Root: FC = () => (
 		<img src={PaperLayer} alt="" className={classes.paperLayer} />
 		<div className={classes.comicLayer} />
 		<Cursor />
-		<Background
-			animation="rotate"
-			landscape={HeroLandscape}
-			portrait={HeroPortrait}
-		/>
+		<div className={classes.background}>
+			<HeroLandscape className={classes.landscape} />
+			<HeroPortrait className={classes.portrait} />
+		</div>
 		<div className={classes.content}>
 			<div className={classes.socialLinks}>
 				{socialIcons.map(({ icon, href }, index) => (
