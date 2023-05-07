@@ -38,3 +38,18 @@
     padding: v.$padding-mobile;
   }
 }
+
+.socialLinks {
+  display: flex;
+  gap: u.rem-calc(20);
+  position: fixed;
+  right: u.rem-calc(30);
+  top: u.rem-calc(30);
+  z-index: 4;
+
+  @include bp.down(sm) {
+    margin: 0 0 u.rem-calc(30) auto;
+    position: static;
+    width: fit-content;
+  }
+}
