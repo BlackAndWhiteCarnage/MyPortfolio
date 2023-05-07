@@ -52,38 +52,18 @@
   max-width: u.rem-calc(500);
 }
 
-.is-secondary-variant {
-  .isNext,
-  .isPrev {
-    transform: scale(0.7);
-  }
+.isNext {
+  @include slide-transform();
 
-  .slideWrapper {
-    margin: auto;
-    max-width: u.rem-calc(400);
-  }
-
-  .swiperWrapper {
-    max-height: u.rem-calc(400);
-    max-width: u.rem-calc(500);
-    overflow: hidden !important;
-  }
+  opacity: 0.65;
+  pointer-events: none;
 }
 
-.is-primary-variant {
-  .isNext {
-    @include slide-transform();
+.isPrev {
+  @include slide-transform(-17deg, -50, 70);
 
-    opacity: 0.65;
-    pointer-events: none;
-  }
-
-  .isPrev {
-    @include slide-transform(-17deg, -50, 70);
-
-    opacity: 0.65;
-    pointer-events: none;
-  }
+  opacity: 0.65;
+  pointer-events: none;
 }
 
 .slide {
