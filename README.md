@@ -57,7 +57,7 @@ https://github.com/BlackAndWhiteCarnage/MyPortfolio/blob/develop/package.json
 
 ## How to run storybook?
 
-1. After previous steps
+1. Run after previous steps
 
 ```bash
   npm run storybook
