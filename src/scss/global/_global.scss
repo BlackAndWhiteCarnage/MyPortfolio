@@ -14,6 +14,10 @@
   padding: 0;
 }
 
+svg {
+  pointer-events: none;
+}
+
 body {
   font-family: font.get(primary);
   overflow-x: hidden;
