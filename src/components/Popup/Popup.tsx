@@ -50,8 +50,10 @@ const Popup: FC<PopupProps> = ({
 				}}
 			>
 				<div className={classes.background}>
-					<Landscape className={classes.landscape} />
-					<Portrait className={classes.portrait} />
+					<div className={classes.innerBackround}>
+						<Landscape className={classes.landscape} />
+						<Portrait className={classes.portrait} />
+					</div>
 				</div>
 				<button
 					className={classes.close}

@@ -38,8 +38,10 @@
   pointer-events: none;
   position: fixed;
   top: 0;
+  transform: scale(1.3);
+  transition: 0.35s;
   width: 100vw;
-  z-index: 3;
+  z-index: -1;
 
   @media screen and (orientation: portrait) {
     .landscape {
@@ -52,6 +54,11 @@
       display: none;
     }
   }
+}
+
+.innerBackround {
+  height: 100%;
+  opacity: 0.45;
 }
 
 .content {
@@ -136,8 +143,12 @@
   transition: 0.35s;
 
   .background {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .innerBackround {
     animation: scale 10s infinite alternate;
-    opacity: 0.45;
   }
 
   .content {
