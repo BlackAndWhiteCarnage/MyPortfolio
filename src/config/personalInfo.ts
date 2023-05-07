@@ -4,6 +4,7 @@
 import { PersonalInfoListProps } from '@/components/PersonalInfoList/PersonalInfoList';
 import { ReactComponent as ShoeIcon } from '@/icons/shoe.svg';
 import { ReactComponent as UserIcon } from '@/icons/user.svg';
+import { ReactComponent as ArrowIcon } from '@/icons/arrow-circle.svg';
 
 const personalInfo: PersonalInfoListProps['items'] = [
 	{
@@ -17,6 +18,7 @@ const personalInfo: PersonalInfoListProps['items'] = [
 	{
 		label: '603 312 504',
 		href: 'tel:603-312-504',
+		icon: ArrowIcon,
 	},
 	{
 		label: 'Shoe size 45/46',

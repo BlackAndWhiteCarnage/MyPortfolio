@@ -7,7 +7,6 @@ import classnames from 'classnames/bind';
 /**
  * External dependencies
  */
-import { ReactComponent as ArrowIcon } from '@/icons/arrow-circle.svg';
 import { SVGIcon } from '@/types';
 import classes from './PersonalInfoList.module.scss';
 
@@ -23,16 +22,16 @@ export type PersonalInfoListProps = {
 const cx = classnames.bind(classes);
 
 const PersonalInfoList: FC<PersonalInfoListProps> = ({ className, items }) => {
-	const getContent = (content: string, Icon: SVGIcon) => (
+	const getContent = (content: string, Icon: SVGIcon | undefined) => (
 		<>
 			{content}
-			<Icon className={classes.icon} />
+			{Icon && <Icon className={classes.icon} />}
 		</>
 	);
 
 	return (
 		<ul className={cx('items', className, 'is-style-text-large')}>
-			{items.map(({ label, href, icon: Icon = ArrowIcon }, index) => (
+			{items.map(({ label, href, icon: Icon }, index) => (
 				<li key={index}>
 					{href ? (
 						<a
