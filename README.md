@@ -18,6 +18,7 @@ Hi! My name is Chris and this is my portfolio. The most important thing for me w
 ## Used Technologies
 
 Checkout devDependencies & dependencies:
+<br />
 https://github.com/BlackAndWhiteCarnage/MyPortfolio/blob/develop/package.json
 
 <br />
