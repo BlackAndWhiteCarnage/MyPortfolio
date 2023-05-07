@@ -27,6 +27,7 @@
 
 .content {
   @extend %shadow-left;
+
   @include b.background(color.get(white), color.get(white-1));
 
   margin: auto;
@@ -67,6 +68,7 @@
 
 .close {
   @extend %shadow-left;
+
   @include b.background(color.get(yellow), color.get(yellow-1));
 
   cursor: pointer;
