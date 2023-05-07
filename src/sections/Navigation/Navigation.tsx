@@ -6,7 +6,6 @@ import { FC } from 'react';
 /**
  * Internal dependencies
  */
-import Atropos from 'atropos/react';
 import { NavLinks } from '@/components';
 import { navLinks } from '@/config';
 import classes from './Navigation.module.scss';
