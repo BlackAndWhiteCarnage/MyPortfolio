@@ -16,7 +16,7 @@ import classes from './Contact.module.scss';
 const cx = classnames.bind(classes);
 
 const Contact: FC = () => (
-	<div className={classes.wrapper}>
+	<div className={classes.wrapper} id="contact">
 		<div className={classes.form}>
 			<ContactForm />
 		</div>
