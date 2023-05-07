@@ -1,5 +1,6 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/unit' as u;
+@use 'scss/color';
 
 .wrapper {
   align-items: center;
@@ -14,4 +15,28 @@
   @include bp.down(sm) {
     margin: u.rem-calc(100) 0 u.rem-calc(200);
   }
+}
+
+.info {
+  background: color.get(black);
+  color: color.get(red-3);
+  font-size: u.rem-calc(36);
+  left: 0;
+  padding: u.rem-calc(20);
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  @include bp.down(md) {
+    font-size: u.rem-calc(28);
+  }
+
+  @include bp.down(sm) {
+    font-size: u.rem-calc(20);
+  }
+}
+
+.link {
+  color: color.get(yellow);
+  text-decoration: underline;
 }

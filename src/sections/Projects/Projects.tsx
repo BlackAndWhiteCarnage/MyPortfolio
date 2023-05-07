@@ -11,6 +11,25 @@ import classes from './Projects.module.scss';
 
 const Projects: FC = () => (
 	<div className={classes.wrapper} id="projects">
+		<span className={classes.info}>
+			Please be informed that I have recently been fully engaged in
+			professional commitments, which have limited my time for personal
+			projects. Consequently, I believe that the code I previously
+			authored may not accurately reflect my current skill set. However, I
+			am excited to announce that I'm currently in the process of
+			enhancing my previous projects. They will be published soon,
+			showcasing my current capabilities. In the meantime, I invite you to
+			visit my{' '}
+			<a
+				className={classes.link}
+				href="https://github.com/BlackAndWhiteCarnage"
+				target="_blank"
+				rel="noreferrer"
+			>
+				GitHub profile
+			</a>{' '}
+			where you can explore my past and upcoming projects.
+		</span>
 		<Slider>
 			<Poster
 				image={{
