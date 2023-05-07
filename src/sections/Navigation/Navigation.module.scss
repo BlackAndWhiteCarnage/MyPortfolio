@@ -54,7 +54,7 @@
   @include bp.down(sm) {
     height: unset;
     max-width: unset;
-    width: 100%;
+    width: 80%;
   }
 }
 
@@ -68,6 +68,6 @@
   @include bp.down(sm) {
     height: unset;
     max-width: unset;
-    width: 100%;
+    width: 85%;
   }
 }
