@@ -11,18 +11,28 @@ import { Portal } from '@/components';
 import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
 import { usePopup } from '@/hooks';
 import classes from './Popup.module.scss';
+import { SVGIcon } from '@/types';
 
 type UsePopupReturn = ReturnType<typeof usePopup>;
 
 export type PopupProps = PropsWithChildren<
 	{
+		landscapeBackround: SVGIcon;
+		portraitBackround: SVGIcon;
 		title?: string;
 	} & UsePopupReturn
 >;
 
 const cx = classnames.bind(classes);
 
-const Popup: FC<PopupProps> = ({ children, close, isOpen = true, title }) => {
+const Popup: FC<PopupProps> = ({
+	children,
+	landscapeBackround: Landscape,
+	portraitBackround: Portrait,
+	close,
+	isOpen = true,
+	title,
+}) => {
 	useEffect(() => {
 		document.documentElement.style.overflowY = isOpen ? 'hidden' : 'auto';
 	}, [isOpen]);
@@ -39,6 +49,10 @@ const Popup: FC<PopupProps> = ({ children, close, isOpen = true, title }) => {
 						close();
 				}}
 			>
+				<div className={classes.background}>
+					<Landscape className={classes.landscape} />
+					<Portrait className={classes.portrait} />
+				</div>
 				<button
 					className={classes.close}
 					tabIndex={isOpen ? 0 : -1}

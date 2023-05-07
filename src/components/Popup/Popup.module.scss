@@ -5,6 +5,12 @@
 @use 'scss/placeholders/shadows';
 @use 'scss/unit' as u;
 
+@keyframes scale {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 .popup {
   @include b.background(color.get(beige), color.get(beige-1));
 
@@ -25,6 +31,29 @@
   }
 }
 
+.background {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+
+  @media screen and (orientation: portrait) {
+    .landscape {
+      display: none;
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    .portrait {
+      display: none;
+    }
+  }
+}
+
 .content {
   @extend %shadow-left;
 
@@ -34,8 +63,10 @@
   max-width: u.rem-calc(1200);
   opacity: 0;
   padding: u.rem-calc(20);
+  position: relative;
   transform: translateY(u.rem-calc(-200)) scale(0.8);
   transition: 0.35s ease-in-out;
+  z-index: 5;
 }
 
 .has-title .content {
@@ -103,6 +134,11 @@
   opacity: 1;
   pointer-events: all;
   transition: 0.35s;
+
+  .background {
+    animation: scale 10s infinite alternate;
+    opacity: 0.45;
+  }
 
   .content {
     opacity: 1;

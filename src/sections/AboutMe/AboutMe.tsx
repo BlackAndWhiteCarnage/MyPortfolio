@@ -11,6 +11,8 @@ import { Button, List, Popup } from '@/components';
 import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
 import { ReactComponent as DocumentIcon } from '@/icons/file.svg';
 import { skills, aboutMe, moreAboutMe } from '@/config';
+import { ReactComponent as HeroLandscape } from '@/images/hero-about-me-landscape.svg';
+import { ReactComponent as HeroPortrait } from '@/images/hero-about-me-portrait.svg';
 import { usePopup } from '@/hooks';
 import classes from './AboutMe.module.scss';
 import resume from '@/files/resume.pdf';
@@ -59,7 +61,11 @@ const AboutMe: FC = () => {
 					/>
 				</div>
 			</div>
-			<Popup {...popup}>
+			<Popup
+				{...popup}
+				landscapeBackround={HeroLandscape}
+				portraitBackround={HeroPortrait}
+			>
 				<article className={classes.moreAboutMe}>{moreAboutMe}</article>
 			</Popup>
 		</>
