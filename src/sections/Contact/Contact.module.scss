@@ -3,6 +3,16 @@
 @use 'scss/placeholders/shadows';
 @use 'scss/unit' as u;
 
+@keyframes personalInfoAnimation {
+  25% {
+    transform: rotate(-2deg);
+  }
+
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
 .wrapper {
   align-items: center;
   display: flex;
@@ -30,6 +40,10 @@
 .personalInfo {
   max-width: u.rem-calc(400);
   width: 100%;
+}
+
+.personalInfoList {
+  animation: personalInfoAnimation 4s infinite;
 }
 
 .title {

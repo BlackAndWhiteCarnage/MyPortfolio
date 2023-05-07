@@ -23,7 +23,10 @@ const Contact: FC = () => (
 		</div>
 		<div className={classes.personalInfo}>
 			<h2 className={classes.title}>Personal Info</h2>
-			<PersonalInfoList items={personalInfo} />
+			<PersonalInfoList
+				items={personalInfo}
+				className={classes.personalInfoList}
+			/>
 			<div className={classes.other}>
 				<div className={classes.qrCode}>
 					<QrCode className={classes.code} />

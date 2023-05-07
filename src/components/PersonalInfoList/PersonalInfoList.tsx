@@ -12,6 +12,7 @@ import { SVGIcon } from '@/types';
 import classes from './PersonalInfoList.module.scss';
 
 export type PersonalInfoListProps = {
+	className?: string;
 	items: Array<{
 		href?: string;
 		icon?: SVGIcon;
@@ -21,7 +22,7 @@ export type PersonalInfoListProps = {
 
 const cx = classnames.bind(classes);
 
-const PersonalInfoList: FC<PersonalInfoListProps> = ({ items }) => {
+const PersonalInfoList: FC<PersonalInfoListProps> = ({ className, items }) => {
 	const getContent = (content: string, Icon: SVGIcon) => (
 		<>
 			{content}
@@ -30,7 +31,7 @@ const PersonalInfoList: FC<PersonalInfoListProps> = ({ items }) => {
 	);
 
 	return (
-		<ul className={cx('items', 'is-style-text-large')}>
+		<ul className={cx('items', className, 'is-style-text-large')}>
 			{items.map(({ label, href, icon: Icon = ArrowIcon }, index) => (
 				<li key={index}>
 					{href ? (
