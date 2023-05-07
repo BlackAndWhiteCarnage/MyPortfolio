@@ -18,7 +18,7 @@ import resume from '@/files/resume.pdf';
 const cx = classnames.bind(classes);
 
 const AboutMe: FC = () => {
-	const { open, close, isOpen, ...props } = usePopup();
+	const popup = usePopup();
 
 	return (
 		<>
@@ -31,7 +31,11 @@ const AboutMe: FC = () => {
 						{aboutMe}
 					</p>
 					<div className={classes.buttons}>
-						<Button position="left" icon={ArrowIcon} onClick={open}>
+						<Button
+							position="left"
+							icon={ArrowIcon}
+							onClick={popup.open}
+						>
 							Read More
 						</Button>
 						<Button
@@ -55,7 +59,7 @@ const AboutMe: FC = () => {
 					/>
 				</div>
 			</div>
-			<Popup close={close} isOpen={isOpen} open={open} {...props}>
+			<Popup {...popup}>
 				<article className={classes.moreAboutMe}>{moreAboutMe}</article>
 			</Popup>
 		</>
