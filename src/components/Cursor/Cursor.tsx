@@ -74,6 +74,10 @@ const Cursor: FC = () => {
 	}, [move]);
 
 	useEffect(() => {
+		window.location.href.indexOf('portfoliorepsch') !== -1 &&
+			document
+				.querySelectorAll('*')
+				.forEach((el) => ((el as HTMLElement).style.cursor = 'none'));
 		setTimeout(() => setCursorState('default'), 2000);
 	}, []);
 
