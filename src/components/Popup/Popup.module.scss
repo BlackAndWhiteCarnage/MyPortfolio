@@ -91,7 +91,7 @@
   transform: translateY(u.rem-calc(60)) scale(0.6) rotate(10deg);
   transition: 0.15s 0.25s ease-out;
   width: fit-content;
-  z-index: 2;
+  z-index: 6;
 
   @include bp.down(sm) {
     margin-top: u.rem-calc(20);

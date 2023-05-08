@@ -10,6 +10,8 @@ import { ReactRenderer, StoryObj, Meta } from '@storybook/react';
  */
 import { Button } from '@/components';
 import { usePopup } from '@/hooks';
+import { ReactComponent as HeroLandscape } from '@/images/hero-about-me-landscape.svg';
+import { ReactComponent as HeroPortrait } from '@/images/hero-about-me-portrait.svg';
 import Popup from '.';
 
 export default {
@@ -46,6 +48,8 @@ const children = (
 export const Default: StoryObj<typeof Popup> = {
 	render: PopupStory,
 	args: {
+		landscapeBackround: HeroLandscape,
+		portraitBackround: HeroPortrait,
 		children,
 		title: 'Project Name Here!',
 	},
@@ -54,6 +58,8 @@ export const Default: StoryObj<typeof Popup> = {
 export const WithoutTitle: StoryObj<typeof Popup> = {
 	render: PopupStory,
 	args: {
+		landscapeBackround: HeroLandscape,
+		portraitBackround: HeroPortrait,
 		children,
 	},
 };
