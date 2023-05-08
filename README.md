@@ -57,7 +57,7 @@ https://github.com/BlackAndWhiteCarnage/MyPortfolio/blob/develop/package.json
 
 ## How to run storybook?
 
-1. After previous steps
+1. Run after previous steps
 
 ```bash
   npm run storybook
@@ -69,19 +69,19 @@ https://github.com/BlackAndWhiteCarnage/MyPortfolio/blob/develop/package.json
 
 ### Home
 
-<img src="./readmeImages/home.png" alt="Home" width='100%'/>
+<img src="https://user-images.githubusercontent.com/71930296/236704669-0c4d86d9-478b-4229-b4df-73940c0eb14b.png" alt="Home" width='100%'/>
 
 ### About Me
 
-<img src="./readmeImages/about-me.png" alt="About Me" width='100%'/>
+<img src="https://user-images.githubusercontent.com/71930296/236704677-b266e1a0-0801-437c-beca-c141b354ce95.png" alt="About Me" width='100%'/>
 
 ### Projects (empty for now, read info from screenshot 😔)
 
-<img src="./readmeImages/projects.jpg" alt="Projects" width='100%'/>
+<img src="https://user-images.githubusercontent.com/71930296/236704690-8c786ec6-5a6c-4aa6-949e-69ecbe6cc8de.jpg" alt="Projects" width='100%'/>
 
 ### Contact
 
-<img src="./readmeImages/contact.png" alt="Contact" width='100%'/>
+<img src="https://user-images.githubusercontent.com/71930296/236704699-3ef1bddf-fa22-480c-841f-b7a4aa87de92.png" alt="Contact" width='100%'/>
 
 <br />
 
