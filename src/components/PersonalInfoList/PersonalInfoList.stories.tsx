@@ -9,15 +9,18 @@ import { StoryObj, Meta, StoryFn } from '@storybook/react';
 import { personalInfo } from '@/config';
 import PersonalInfoList from '.';
 
+const disable = {
+	table: {
+		disable: true,
+	},
+};
+
 export default {
 	title: 'Components/PersonalInfoList',
 	component: PersonalInfoList,
 	argTypes: {
-		items: {
-			table: {
-				disable: true,
-			},
-		},
+		items: disable,
+		className: disable,
 	},
 	decorators: [
 		(Story: StoryFn) => (

@@ -8,15 +8,18 @@ import { StoryObj, Meta } from '@storybook/react';
  */
 import List from '.';
 
+const disable = {
+	table: {
+		disable: true,
+	},
+};
+
 export default {
 	title: 'Components/List',
 	component: List,
 	argTypes: {
-		items: {
-			table: {
-				disable: true,
-			},
-		},
+		items: disable,
+		className: disable,
 	},
 	excludeStories: ['SecondaryProps', 'PrimaryProps'],
 } satisfies Meta<typeof List>;

@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { StoryObj } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 
 /**
  * Internal dependencies
@@ -9,10 +9,20 @@ import { StoryObj } from '@storybook/react';
 import { Poster } from '@/components';
 import Slider from '.';
 
+const disable = {
+	table: {
+		disable: true,
+	},
+};
+
 export default {
 	title: 'Components/Slider',
 	component: Slider,
-};
+	argTypes: {
+		className: disable,
+		children: disable,
+	},
+} satisfies Meta<typeof Slider>;
 
 export const Default: StoryObj<typeof Slider> = {
 	args: {

@@ -14,9 +14,23 @@ import { ReactComponent as HeroLandscape } from '@/images/hero-about-me-landscap
 import { ReactComponent as HeroPortrait } from '@/images/hero-about-me-portrait.svg';
 import Popup from '.';
 
+const disable = {
+	table: {
+		disable: true,
+	},
+};
+
 export default {
 	title: 'Components/Popup',
 	component: Popup,
+	argTypes: {
+		landscapeBackround: disable,
+		portraitBackround: disable,
+		children: disable,
+		open: disable,
+		toggle: disable,
+		close: disable,
+	},
 } satisfies Meta<typeof Popup>;
 
 const PopupStory: ArgsStoryFn<ReactRenderer, ComponentProps<typeof Popup>> = (
