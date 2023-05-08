@@ -42,7 +42,7 @@ export default {
 export const Default: StoryObj<typeof ProjectDescription> = {
 	args: {
 		image: {
-			src: 'https://portfoliorepsch.netlify.app/static/media/LaMiaPassioneMaltese.a68e0f90.jpg',
+			src: 'https://raw.githubusercontent.com/BlackAndWhiteCarnage/La-Mia-Passion-Maltese/main/readmeImages/1.png',
 			alt: 'La Mia Passione Maltese',
 		},
 		liveUrl: 'https://lamiapassionemaltese.pl/',
