@@ -11,15 +11,18 @@ import { ReactComponent as FacebookIcon } from '@/icons/facebook.svg';
 import { ButtonProps } from './Button';
 import Button from '.';
 
+const disable = {
+	table: {
+		disable: true,
+	},
+};
+
 export default {
 	title: 'Components/Button',
 	component: Button,
 	argTypes: {
-		icon: {
-			table: {
-				disable: true,
-			},
-		},
+		icon: disable,
+		iconedButton: disable,
 	},
 } satisfies Meta<typeof Button>;
 

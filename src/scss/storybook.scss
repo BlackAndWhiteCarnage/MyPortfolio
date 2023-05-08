@@ -1,5 +1,9 @@
 @use 'scss/index.scss';
 
+html {
+  overflow-x: unset !important;
+}
+
 .sb-show-main {
   &.sb-main-centered {
     .container {
