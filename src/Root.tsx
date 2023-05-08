@@ -15,7 +15,7 @@ import classes from './Root.module.scss';
 import PaperLayer from '@/images/paper.jpg';
 
 const Root: FC = () => (
-	<div className="container">
+	<>
 		<img src={PaperLayer} alt="" className={classes.paperLayer} />
 		<div className={classes.comicLayer} />
 		<Cursor />
@@ -41,7 +41,7 @@ const Root: FC = () => (
 			<Projects />
 			<Contact />
 		</div>
-	</div>
+	</>
 );
 
 export default Root;
