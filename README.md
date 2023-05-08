@@ -5,7 +5,8 @@
 
 # Krzysztof Repsch - My Portfolio 🤟
 
-https://portfoliorepsch.netlify.app/
+Live: https://portfoliorepsch.netlify.app/
+Storybook: https://portfoliostorybook.netlify.app/
 
 <br />
 
