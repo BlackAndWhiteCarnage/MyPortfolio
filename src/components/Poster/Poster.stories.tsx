@@ -22,7 +22,6 @@ export default {
 			<div
 				style={{
 					maxWidth: '31.25rem',
-					height: '15.25rem',
 				}}
 			>
 				<Story />

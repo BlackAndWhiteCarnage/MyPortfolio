@@ -35,6 +35,10 @@ const Popup: FC<PopupProps> = ({
 }) => {
 	useEffect(() => {
 		document.documentElement.style.overflowY = isOpen ? 'hidden' : 'auto';
+
+		return () => {
+			document.documentElement.style.overflowY = 'auto';
+		};
 	}, [isOpen]);
 
 	return (
