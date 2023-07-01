@@ -4,8 +4,8 @@
 
 @keyframes rotateImageAnimation {
   55% {
-    transform: perspective(u.rem-calc(800)) rotateY(25deg) rotateX(5deg)
-      translateY(u.rem-calc(5)) scale(1.1);
+    transform: perspective(u.rem-calc(800)) rotateY(5deg) rotateX(2deg)
+      translateY(u.rem-calc(5)) scale(1);
   }
 }
 
@@ -29,14 +29,19 @@
   @include bp.down(md) {
     flex-direction: column;
     gap: u.rem-calc(100);
+    margin-top: u.rem-calc(60);
     min-height: unset;
+  }
+
+  @include bp.down(xs) {
+    margin: 0;
   }
 }
 
 .image {
   @extend %shadow-left;
 
-  animation: rotateImageAnimation 6s infinite;
+  animation: rotateImageAnimation 5s infinite;
   height: u.rem-calc(500);
   max-width: u.rem-calc(400);
   width: 100%;
@@ -47,7 +52,7 @@
 }
 
 .links {
-  animation: rotateLinksAnimation 3s infinite alternate;
+  animation: rotateLinksAnimation 8s infinite alternate;
   height: u.rem-calc(500);
   max-width: u.rem-calc(500);
   transform: perspective(u.rem-calc(800)) rotateY(-2deg) scale(1.1);
