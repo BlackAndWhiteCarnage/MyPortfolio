@@ -1,38 +1,10 @@
 @use 'scss/unit' as u;
 
-@keyframes waveAnimation {
-  50% {
-    transform: scale(1.1) rotate(-45deg)
-      translate(u.rem-calc(-20), u.rem-calc(-70));
-  }
-}
-
-@keyframes handAnimation {
-  50% {
-    transform: scale(1.5) rotate(-15deg);
-  }
-}
-
-@keyframes iconAnimation {
-  50% {
-    transform: rotate(-15deg) translateY(u.rem-calc(-15)) scale(1.2);
-  }
-}
-
 .icon {
-  animation: iconAnimation 3s infinite;
   left: u.rem-calc(6);
   opacity: 0;
   position: absolute;
   top: u.rem-calc(-40);
-  transform: scale(0);
-  transition: 0.35s;
-}
-
-.hand-waiting {
-  animation: handAnimation 3s infinite;
-  opacity: 0;
-  position: absolute;
   transform: scale(0);
   transition: 0.35s;
 }
@@ -43,13 +15,6 @@
   width: 100%;
 }
 
-.hand {
-  opacity: 0;
-  position: absolute;
-  transform: scale(0);
-  transition: 0.35s;
-}
-
 .wrapper {
   height: u.rem-calc(100);
   pointer-events: none;
@@ -57,50 +22,6 @@
   transform: translateX(u.rem-calc(-15));
   width: u.rem-calc(100);
   z-index: 3;
-
-  &.isWaiting {
-    .hand {
-      opacity: 0;
-    }
-
-    .hand-waiting {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-
-    .icon {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-  }
-}
-
-.hand-pointer {
-  transform: translateY(u.rem-calc(-20)) scale(0);
-}
-
-.state-wave .hand-wave {
-  animation: waveAnimation 0.7s infinite;
-  opacity: 1;
-  transform: scale(1) translate(u.rem-calc(-20), u.rem-calc(-70));
-  transform-origin: center;
-}
-
-.state-default .hand-default {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.state-pointer-click,
-.state-pointer-missed {
-  .hand-default {
-    opacity: 1;
-  }
-}
-
-.state-pointer .hand-pointer {
-  opacity: 1;
-  transform: translateY(u.rem-calc(-20)) scale(1);
 }
 
 .feedback-bang:not(.state-wave) .bang {
@@ -126,5 +47,5 @@
   opacity: 0;
   position: absolute;
   transform: scale(0.2) rotate(-20deg);
-  transition: 0.25s;
+  transition: 0.2s;
 }
