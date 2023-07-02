@@ -1,19 +1,26 @@
-const skills = [
-	'Html',
-	'Css',
-	'Scss',
-	'Styled-components',
-	'Css Modules',
-	'JavaScript',
-	'TypeScript',
-	'React',
-	'Next.js',
-	'Graphql Basics',
-	'Storybook',
-	'React testing library',
-	'PHP Basics',
-	'Three.js Basics',
-	'Figma',
+export const knownSkills = [
+	'html',
+	'css',
+	'scss',
+	'Styled components',
+	'css modules',
+	'javascript',
+	'typescript',
+	'react',
+	'next.js',
+	'storybook',
+	'react-three',
 ];
 
-export default skills;
+export const workedWith = ['php', 'redux', 'graphql', 'gatsby.js', 'wordpress'];
+
+export const tools = [
+	'visual studio code',
+	'figma',
+	'git',
+	'webpack',
+	'node',
+	'nvm',
+	'npm',
+	'yarn',
+];

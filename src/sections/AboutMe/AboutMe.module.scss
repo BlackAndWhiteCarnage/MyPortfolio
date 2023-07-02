@@ -1,24 +1,17 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/color';
-@use 'scss/placeholders/shadows';
 @use 'scss/unit' as u;
 
-@keyframes skillsAnimation {
-  50% {
-    transform: perspective(u.rem-calc(800)) rotate(2deg) scale(1);
-  }
-}
-
 .wrapper {
-  align-items: center;
   display: flex;
+  flex-direction: column;
   gap: u.rem-calc(30);
   justify-content: space-between;
   min-height: 100vh;
 
   @include bp.down(md) {
     flex-direction: column;
-    gap: u.rem-calc(100);
+    gap: u.rem-calc(50);
     margin-top: u.rem-calc(80);
     min-height: unset;
   }
@@ -27,11 +20,6 @@
 .title {
   color: color.get(gray-2);
   margin-bottom: u.rem-calc(30);
-}
-
-.about {
-  max-width: u.rem-calc(450);
-  transform: perspective(u.rem-calc(800)) rotateY(15deg) scale(1.1);
 }
 
 .description {
@@ -44,30 +32,4 @@
   gap: u.rem-calc(20);
   justify-content: space-between;
   margin-top: u.rem-calc(30);
-}
-
-.skills {
-  max-width: u.rem-calc(500);
-  transform: perspective(u.rem-calc(800)) rotateY(-15deg) scale(1.05);
-}
-
-.skillsList {
-  animation: skillsAnimation 3s infinite;
-}
-
-.moreAboutMe {
-  color: color.get(gray-2);
-  padding: u.rem-calc(20);
-
-  @include bp.down(sm) {
-    padding: 0;
-  }
-
-  h2 {
-    margin-bottom: u.rem-calc(20);
-  }
-
-  section:not(:last-child) {
-    margin-bottom: u.rem-calc(40);
-  }
 }
