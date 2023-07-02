@@ -9,8 +9,8 @@ import classnames from 'classnames/bind';
  */
 import { Button, List } from '@/components';
 import { ImageData } from '@/types';
-import { ReactComponent as GithubIcon } from '@/icons/github.svg';
-import { ReactComponent as LinkIcon } from '@/icons/link.svg';
+import { ReactComponent as GithubIcon } from '@/assets/icons/github.svg';
+import { ReactComponent as LinkIcon } from '@/assets/icons/link.svg';
 import classes from './ProjectDescription.module.scss';
 
 type ProjectDescriptionProps = {

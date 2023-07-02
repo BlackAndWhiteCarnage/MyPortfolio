@@ -2,9 +2,9 @@
  * Internal dependencies
  */
 import { PersonalInfoListProps } from '@/components/PersonalInfoList/PersonalInfoList';
-import { ReactComponent as ShoeIcon } from '@/icons/shoe.svg';
-import { ReactComponent as UserIcon } from '@/icons/user.svg';
-import { ReactComponent as ArrowIcon } from '@/icons/arrow-circle.svg';
+import { ReactComponent as ShoeIcon } from '@/assets/icons/shoe.svg';
+import { ReactComponent as UserIcon } from '@/assets/icons/user.svg';
+import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow-circle.svg';
 
 const personalInfo: PersonalInfoListProps['items'] = [
 	{

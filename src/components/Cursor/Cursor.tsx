@@ -7,13 +7,13 @@ import classnames from 'classnames/bind';
 /**
  * External dependencies
  */
-import { ReactComponent as Bang } from '@/icons/bang.svg';
-import { ReactComponent as HandDefault } from '@/icons/hand-default.svg';
-import { ReactComponent as HandPointer } from '@/icons/hand-pointer.svg';
-import { ReactComponent as HandWaiting } from '@/icons/hand-waiting.svg';
-import { ReactComponent as HandWave } from '@/icons/hand-wave.svg';
-import { ReactComponent as Ouch } from '@/icons/ouch.svg';
-import { ReactComponent as Typescript } from '@/icons/typescript.svg';
+import { ReactComponent as Bang } from '@/assets/icons/bang.svg';
+import { ReactComponent as HandDefault } from '@/assets/icons/hand-default.svg';
+import { ReactComponent as HandPointer } from '@/assets/icons/hand-pointer.svg';
+import { ReactComponent as HandWaiting } from '@/assets/icons/hand-waiting.svg';
+import { ReactComponent as HandWave } from '@/assets/icons/hand-wave.svg';
+import { ReactComponent as Ouch } from '@/assets/icons/ouch.svg';
+import { ReactComponent as Typescript } from '@/assets/icons/typescript.svg';
 import classes from './Cursor.module.scss';
 
 const cx = classnames.bind(classes);

@@ -6,8 +6,8 @@ import { StoryObj, Meta } from '@storybook/react';
 /**
  * Internal dependencies
  */
-import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
-import { ReactComponent as FacebookIcon } from '@/icons/facebook.svg';
+import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow.svg';
+import { ReactComponent as FacebookIcon } from '@/assets/icons/facebook.svg';
 import { ButtonProps } from './Button';
 import Button from '.';
 

@@ -10,7 +10,7 @@ import emailjs from 'emailjs-com';
  * Internal dependencies
  */
 import { Button, FormField } from '@/components';
-import { ReactComponent as PlaneIcon } from '@/icons/plane.svg';
+import { ReactComponent as PlaneIcon } from '@/assets/icons/plane.svg';
 import classes from './ContactForm.module.scss';
 
 const cx = classnames.bind(classes);

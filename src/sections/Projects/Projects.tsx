@@ -8,8 +8,8 @@ import { FC, useState } from 'react';
  */
 import { Popup, Poster, ProjectDescription, Slider } from '@/components';
 import { projects } from '@/config';
-import { ReactComponent as HeroLandscape } from '@/images/hero-about-me-landscape.svg';
-import { ReactComponent as HeroPortrait } from '@/images/hero-about-me-portrait.svg';
+import { ReactComponent as HeroLandscape } from '@/assets/images/hero-about-me-landscape.svg';
+import { ReactComponent as HeroPortrait } from '@/assets/images/hero-about-me-portrait.svg';
 import { usePopup } from '@/hooks';
 import classes from './Projects.module.scss';
 

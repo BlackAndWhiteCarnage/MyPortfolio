@@ -8,14 +8,14 @@ import classnames from 'classnames/bind';
  * Internal dependencies
  */
 import { Button, List, Popup } from '@/components';
-import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
-import { ReactComponent as DocumentIcon } from '@/icons/file.svg';
-import { ReactComponent as HeroLandscape } from '@/images/hero-about-me-landscape.svg';
-import { ReactComponent as HeroPortrait } from '@/images/hero-about-me-portrait.svg';
+import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow.svg';
+import { ReactComponent as DocumentIcon } from '@/assets/icons/file.svg';
+import { ReactComponent as HeroLandscape } from '@/assets/images/hero-about-me-landscape.svg';
+import { ReactComponent as HeroPortrait } from '@/assets/images/hero-about-me-portrait.svg';
 import { skills, aboutMe, moreAboutMe } from '@/config';
 import { usePopup } from '@/hooks';
 import classes from './AboutMe.module.scss';
-import resume from '@/files/resume.pdf';
+import resume from '@/assets/files/resume.pdf';
 
 const cx = classnames.bind(classes);
 

@@ -1,9 +1,9 @@
 /**
  * Internal dependencies
  */
-import { ReactComponent as FacebookIcon } from '@/icons/facebook.svg';
-import { ReactComponent as GithubIcon } from '@/icons/github.svg';
-import { ReactComponent as LinkedinIcon } from '@/icons/linkedin.svg';
+import { ReactComponent as FacebookIcon } from '@/assets/icons/facebook.svg';
+import { ReactComponent as GithubIcon } from '@/assets/icons/github.svg';
+import { ReactComponent as LinkedinIcon } from '@/assets/icons/linkedin.svg';
 
 const socialIcons = [
 	{

@@ -9,7 +9,7 @@ import { FC } from 'react';
 import { NavLinks } from '@/components';
 import { navLinks } from '@/config';
 import classes from './Navigation.module.scss';
-import Me from '@/images/me.jpg';
+import Me from '@/assets/images/me.jpg';
 
 const Navigation: FC = () => (
 	<div className={classes.wrapper}>

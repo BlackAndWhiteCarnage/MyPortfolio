@@ -8,11 +8,11 @@ import { FC } from 'react';
  */
 import { AboutMe, Contact, Projects, Navigation } from '@/sections';
 import { Button, Cursor } from '@/components';
-import { ReactComponent as HeroLandscape } from '@/images/hero-landscape.svg';
-import { ReactComponent as HeroPortrait } from '@/images/hero-portrait.svg';
+import { ReactComponent as HeroLandscape } from '@/assets/images/hero-landscape.svg';
+import { ReactComponent as HeroPortrait } from '@/assets/images/hero-portrait.svg';
 import { socialIcons } from './config';
 import classes from './Root.module.scss';
-import PaperLayer from '@/images/paper.jpg';
+import PaperLayer from '@/assets/images/paper.jpg';
 
 const Root: FC = () => (
 	<>

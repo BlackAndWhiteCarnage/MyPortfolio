@@ -8,7 +8,7 @@ import classnames from 'classnames/bind';
  * Internal dependencies
  */
 import { Portal } from '@/components';
-import { ReactComponent as ArrowIcon } from '@/icons/arrow.svg';
+import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow.svg';
 import { usePopup } from '@/hooks';
 import classes from './Popup.module.scss';
 import { SVGIcon } from '@/types';
