@@ -38,6 +38,10 @@
   max-width: u.rem-calc(400);
   transform: perspective(u.rem-calc(800)) rotateY(-10deg) scale(1.1);
   width: 100%;
+
+  @include bp.down(xs) {
+    transform: none;
+  }
 }
 
 .personalInfoList {
