@@ -10,8 +10,8 @@ import { ReactRenderer, StoryObj, Meta } from '@storybook/react';
  */
 import { Button } from '@/components';
 import { usePopup } from '@/hooks';
-import { ReactComponent as HeroLandscape } from '@/images/assets/hero-about-me-landscape.svg';
-import { ReactComponent as HeroPortrait } from '@/images/assets/hero-about-me-portrait.svg';
+import { ReactComponent as HeroLandscape } from '@/images/assets/hero-secondary-landscape.svg';
+import { ReactComponent as HeroPortrait } from '@/images/assets/hero-secondary-portrait.svg';
 import Popup from '.';
 
 const disable = {

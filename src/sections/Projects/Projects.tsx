@@ -8,8 +8,8 @@ import { FC, useState } from 'react';
  */
 import { Popup, Poster, ProjectDescription, Slider } from '@/components';
 import { projects } from '@/config';
-import { ReactComponent as HeroLandscape } from '@/assets/images/hero-about-me-landscape.svg';
-import { ReactComponent as HeroPortrait } from '@/assets/images/hero-about-me-portrait.svg';
+import { ReactComponent as HeroLandscape } from '@/assets/images/hero-secondary-landscape.svg';
+import { ReactComponent as HeroPortrait } from '@/assets/images/hero-secondary-portrait.svg';
 import { usePopup } from '@/hooks';
 import classes from './Projects.module.scss';
 
@@ -22,9 +22,12 @@ const Projects: FC = () => {
 		<>
 			<div className={classes.wrapper} id="projects">
 				<Slider>
-					{projects.map(({ title, image }, index) => (
+					{projects.map(({ title, posterImage }, index) => (
 						<Poster
-							image={image}
+							image={{
+								src: posterImage,
+								alt: `${title}, comic like poster`,
+							}}
 							key={index}
 							onClick={() => setActiveProject(title)}
 						/>
@@ -37,9 +40,10 @@ const Projects: FC = () => {
 						title,
 						description,
 						features,
-						image,
+						screenshotImage,
 						reposytoryUrl,
 						usedTools,
+						liveUrl,
 					},
 					index
 				) => (
@@ -53,9 +57,13 @@ const Projects: FC = () => {
 						close={() => setActiveProject('')}
 					>
 						<ProjectDescription
+							liveUrl={liveUrl}
 							description={description}
 							features={features}
-							image={image}
+							image={{
+								src: screenshotImage,
+								alt: `screenshot from ${title} website`,
+							}}
 							reposytoryUrl={reposytoryUrl}
 							usedTools={usedTools}
 						/>
