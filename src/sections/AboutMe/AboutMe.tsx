@@ -44,6 +44,13 @@ const AboutMe: FC = () => {
 						>
 							My Resume
 						</Button>
+						<Button
+							position="left"
+							href="https://github.com/BlackAndWhiteCarnage"
+							target="_blank"
+						>
+							My Github Account
+						</Button>
 					</div>
 				</div>
 				{getSkillsList(
