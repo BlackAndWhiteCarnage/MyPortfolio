@@ -24,11 +24,9 @@ const AboutMe: FC = () => {
 
 	return (
 		<>
-			<div className={classes.wrapper}>
+			<div className={classes.wrapper} id="about-me">
 				<div className={classes.about}>
-					<h2 id="about-me" className={classes.title}>
-						About Me
-					</h2>
+					<h2 className={classes.title}>About Me</h2>
 					<p className={cx('description', 'is-style-text')}>
 						{aboutMe}
 					</p>
